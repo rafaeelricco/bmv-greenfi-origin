@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
                         Sua UCS exclusiva está ativada!
                      </p>
                   </div>
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-2">
                      <h1 className="text-7xl font-semibold tracking-tight">
                         Bem-vindo ao
                         <br /> futuro&nbsp;
