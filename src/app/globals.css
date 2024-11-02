@@ -87,3 +87,17 @@ input {
       background: #c5c5c5;
    }
 }
+
+.animate-green {
+   animation: green-pulse 2s infinite;
+}
+
+@keyframes green-pulse {
+   0% {
+      box-shadow: 0 0 0 0 rgba(11, 169, 91, 0.25);
+   }
+
+   70% {
+      box-shadow: 0 0 0 8px rgba(11, 169, 91, 0);
+   }
+}

@@ -5,16 +5,30 @@ const config: Config = {
    content: [
       './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
       './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-      './src/app/**/*.{js,ts,jsx,tsx,mdx}'
+      './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+      './src/features/**/*.{js,ts,jsx,tsx,mdx}'
    ],
    theme: {
       extend: {
+         container: {
+            center: true,
+            padding: '1rem',
+            screens: {
+               '2xl': '1636px'
+            }
+         },
          colors: {
             background: 'var(--background)',
             foreground: 'var(--foreground)',
 
+            gradient: {
+               start: '#3a452d',
+               end: '#ecae2f'
+            },
+
             gray: {
                default: '#394054',
+               paragraph: 'rgba(100, 106, 105, 1)',
                alto: 'rgba(219, 219, 219, 1)',
                boulder: 'rgba(122, 122, 122, 1)',
                dove: 'rgba(115, 115, 115, 1)',
@@ -67,9 +81,21 @@ const config: Config = {
             md: 'calc(var(--radius) - 2px)',
             sm: 'calc(var(--radius) - 4px)'
          },
+
          fontFamily: {
             raleway: ['"Raleway"', 'sans-serif'],
             montserrat: ['"Montserrat"', 'sans-serif']
+         },
+
+         keyframes: {
+            green: {
+               '0%, 100%': { opacity: '1' },
+               '50%': { opacity: '0.5' }
+            }
+         },
+
+         animation: {
+            green: 'green 2s ease-in-out infinite'
          }
       }
    },

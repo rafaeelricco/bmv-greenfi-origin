@@ -19,9 +19,9 @@ import React from 'react'
 const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
    return (
       <React.Fragment>
-         <nav className={cn('w-full py-6', className)}>
+         <nav className={cn('w-full py-6 grid justify-items-center', className)}>
             <div className="container flex items-center justify-between">
-               <Logo className="w-28 antialiased" />
+               <Logo className="w-24 antialiased" />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 lg:grid">
                      {items.map((item, index) => (
@@ -65,9 +65,6 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                            </li>
                         </ul>
                      ))}
-                     <Button disabled variant={'default'} onClick={() => {}}>
-                        Entrar em contato
-                     </Button>
                   </div>
                </div>
                <div className="lg:hidden">
@@ -115,25 +112,28 @@ const items = [
       label: 'Início',
       tooltip: 'Página inicial.',
       disabled: false,
+      scrollTo: '#',
       link: general_routes.home,
       external: false
    },
    {
       id: 2,
-      label: 'Contagem regressiva',
-      tooltip: 'Contagem regressiva para o aniversário.',
-      disabled: true,
-      link: '/countdown',
+      label: 'Sobre a UCS',
+      tooltip: 'Conheça a UCS.',
+      disabled: false,
+      scrollTo: '#',
+      link: '/',
+      external: false
+   },
+   {
+      id: 3,
+      label: 'Sobre a sustentabilidade',
+      tooltip: 'Entre em contato com a UCS.',
+      disabled: false,
+      scrollTo: '#',
+      link: '/',
       external: false
    }
-   //    {
-   //       id: 4,
-   //       label: 'GitHub',
-   //       tooltip: 'Repositório do projeto.',
-   //       disabled: false,
-   //       link: 'https://github.com/rafaeelricco/converto-app',
-   //       external: true
-   //    }
 ]
 
 type HeaderProps = {
