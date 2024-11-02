@@ -21,7 +21,8 @@
          "@/components/*": ["./src/components/*"],
          "@/routes/*": ["./src/routes/*"],
          "@/lib/*": ["./src/lib/*"],
-         "@/types/*": ["./src/types/*"]
+         "@/types/*": ["./src/types/*"],
+         "@/features/*": ["./src/features/*"]
       }
    },
    "include": [
