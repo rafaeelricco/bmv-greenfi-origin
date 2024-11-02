@@ -10,14 +10,14 @@ export const Hero: React.FC = () => {
       <div className="min-h-[calc(100vh-94px)] flex flex-col justify-between">
          <div className="flex-1 flex items-center">
             <div className="grid grid-cols-[1fr_auto] gap-12 items-center w-full">
-               <div className="flex flex-col gap-2 container-bmv-left">
+               <div className="flex flex-col gap-4 container-bmv-left">
                   <div className="flex items-center gap-2">
                      <Status status="active" />
                      <p className="text-sm font-semibold text-black-text">
                         Sua UCS exclusiva está ativada!
                      </p>
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                      <h1 className="text-7xl font-semibold tracking-tight">
                         Bem-vindo ao
                         <br /> futuro&nbsp;
@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
                      </h1>
                      <p className="text-base font-medium text-gray-paragraph">
                         Transformando sustentabilidade em valor real através da
-                        proteção da Amazônia e investimentos responsáveis.
+                        proteção da Amazônia e<br /> investimentos responsáveis.
                      </p>
                   </div>
                   <div className="flex gap-4">

@@ -19,7 +19,12 @@ import React from 'react'
 const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
    return (
       <React.Fragment>
-         <nav className={cn('w-full py-6 grid justify-items-center', className)}>
+         <nav
+            className={cn(
+               'w-full py-6 grid justify-items-center border-b border-gray-border',
+               className
+            )}
+         >
             <div className="container-bmv flex items-center justify-between">
                <Logo className="w-24 antialiased" />
                <div className="grid items-center gap-12">
