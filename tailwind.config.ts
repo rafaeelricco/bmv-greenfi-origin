@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
    darkMode: ['class'],
@@ -12,10 +13,7 @@ const config: Config = {
       extend: {
          container: {
             center: true,
-            padding: '1rem',
-            screens: {
-               '2xl': '1636px'
-            }
+            padding: '1rem'
          },
          colors: {
             background: 'var(--background)',
@@ -29,6 +27,7 @@ const config: Config = {
             gray: {
                default: '#394054',
                paragraph: 'rgba(100, 106, 105, 1)',
+               border: '#D9DEDD',
                alto: 'rgba(219, 219, 219, 1)',
                boulder: 'rgba(122, 122, 122, 1)',
                dove: 'rgba(115, 115, 115, 1)',
@@ -65,6 +64,7 @@ const config: Config = {
 
             black: {
                default: '#231f20',
+               text: '#1D1F1E',
                bistre: 'rgba(58, 45, 30, 0.97)',
                black: 'rgba(0, 0, 0, 1)',
                charade: 'rgba(39, 41, 51, 1)'
@@ -99,7 +99,47 @@ const config: Config = {
          }
       }
    },
-   plugins: [require('tailwindcss-animate')]
+   plugins: [
+      require('tailwindcss-animate'),
+      plugin(function ({ addComponents, theme }) {
+         const containers = {
+            '.container-bmv': {
+               width: '100%',
+               marginLeft: 'auto',
+               marginRight: 'auto',
+               paddingLeft: '4vw',
+               paddingRight: '4vw',
+               '@screen md': {
+                  paddingLeft: '8vw',
+                  paddingRight: '8vw'
+               }
+            },
+            '.container-bmv-left': {
+               width: '100%',
+               marginLeft: 'auto',
+               marginRight: 'auto',
+               paddingLeft: '4vw',
+               paddingRight: '0',
+               '@screen md': {
+                  paddingLeft: '8vw',
+                  paddingRight: '0'
+               }
+            },
+            '.container-bmv-right': {
+               width: '100%',
+               marginLeft: 'auto',
+               marginRight: 'auto',
+               paddingLeft: '0',
+               paddingRight: '4vw',
+               '@screen md': {
+                  paddingLeft: '0',
+                  paddingRight: '8vw'
+               }
+            }
+         }
+         addComponents(containers)
+      })
+   ]
 }
 
 export default config

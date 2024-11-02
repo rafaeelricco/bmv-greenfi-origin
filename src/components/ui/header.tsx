@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
    return (
       <React.Fragment>
          <nav className={cn('w-full py-6 grid justify-items-center', className)}>
-            <div className="container flex items-center justify-between">
+            <div className="container-bmv flex items-center justify-between">
                <Logo className="w-24 antialiased" />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 lg:grid">
