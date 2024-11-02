@@ -3,30 +3,32 @@ import './globals.css'
 
 export const metadata: Metadata = {
    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
-   title: 'Leilão Mais | Gerencie seus leilões com facilidade',
+   title: 'BMV Global | Soluções Sustentáveis e ESG para Empresas',
    description:
-      'Sistema completo para gestão de leilões automotivos. Organize, gerencie e realize leilões de forma eficiente e transparente através da plataforma Pátio Mais.',
-   authors: [{ name: 'Pátio Mais' }],
+      'Explore soluções de sustentabilidade com a BMV Global, líder em ESG e conservação de biodiversidade. Descubra como a valorização da natureza e UCS (Unidades de Crédito de Sustentabilidade) podem gerar impacto positivo e viabilizar crescimento econômico sustentável.',
+   authors: [{ name: 'BMV Global' }],
    keywords: [
-      'leilão automotivo',
-      'gestão de leilões',
-      'leilão de veículos',
-      'pátio mais',
-      'sistema de leilões',
-      'leilão online',
-      'gestão de pátio'
+      'ESG',
+      'biodiversidade',
+      'sustentabilidade',
+      'créditos de carbono',
+      'CPR Verde',
+      'soluções ambientais',
+      'economia verde',
+      'impacto ambiental',
+      'conservação da natureza'
    ],
    openGraph: {
-      title: 'Leilão Mais | Módulo de Leilões do Pátio Mais',
+      title: 'BMV Global | Inovação em Sustentabilidade e ESG',
       description:
-         'Sistema completo para gestão de leilões automotivos. Organize, gerencie e realize leilões de forma eficiente e transparente.',
+         'A BMV Global integra tecnologia e conservação para fomentar projetos sustentáveis e impacto ambiental positivo.',
       type: 'website'
    },
    twitter: {
       card: 'summary_large_image',
-      title: 'Leilão Mais | Módulo de Leilões do Pátio Mais',
+      title: 'BMV Global | Inovação em Sustentabilidade e ESG',
       description:
-         'Sistema completo para gestão de leilões automotivos. Organize, gerencie e realize leilões de forma eficiente e transparente.'
+         'A BMV Global integra tecnologia e conservação para fomentar projetos sustentáveis e impacto ambiental positivo.'
    }
 }
 
