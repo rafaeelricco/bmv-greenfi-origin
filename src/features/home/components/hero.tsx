@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/src/components/ui/button'
+
 import Image from 'next/image'
 import React from 'react'
 
@@ -38,8 +39,10 @@ export const Hero: React.FC = () => {
                   <Image
                      src="/floresta-hero.png"
                      alt="hero-image"
-                     width={1000}
-                     height={1000}
+                     width={1200}
+                     height={1200}
+                     quality={100}
+                     priority
                      className="h-[calc(100vh-94px-224px)] w-auto object-cover"
                   />
                </div>
