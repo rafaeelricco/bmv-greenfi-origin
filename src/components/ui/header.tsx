@@ -20,16 +20,18 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
       <React.Fragment>
          <nav
             className={cn(
-               'w-full py-6 grid justify-items-center border-b border-gray-border',
+               'w-full py-4 md:py-6 grid justify-items-center border-b border-gray-border',
                className
             )}
          >
             <div className="flex items-center justify-between w-full container px-4 md:px-0">
+               {/* @next/next/no-img-element */}
                <img
                   loading="lazy"
                   fetchPriority="high"
                   src="/logo-header.png"
                   alt="logo-header"
+                  className="w-64"
                />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 md:grid">
