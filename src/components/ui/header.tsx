@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                   width={315}
                   height={33}
                   priority
-                  className="w-64 lg:w-auto"
+                  className="w-64 lg:w-[315px]"
                />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 md:grid">
