@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
                         fill
                         className="object-cover object-center"
                         priority
-                        quality={100}
+                        quality={50}
                      />
                      <div className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-md hover:bg-white-default/80 transition-colors cursor-pointer">
                         <Link
