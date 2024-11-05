@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
          <div className="min-h-[calc(100vh-82px)] flex flex-col justify-between relative">
             <div className="flex-1 flex items-center container px-4 md:px-0">
                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center w-full">
-                  <div className="flex flex-col gap-4 mt-8 md:mt-0">
+                  <div className="flex flex-col gap-4 mt-8 lg:mt-0">
                      <div className="flex items-center gap-2">
                         <Status status="active" />
                         <p className="text-sm font-semibold text-black-text">
@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
                   </div>
                </div>
             </div>
-            <div className="min-h-[224px] border-t border-b border-gray-border grid items-center bg-white-default mt-8 md:mt-0">
+            <div className="min-h-[224px] border-t border-b border-gray-border grid items-center bg-white-default mt-12 lg:mt-0">
                <div className="grid grid-cols-1 md:grid-flow-col items-center container gap-8 md:gap-2 px-4 md:px-0 py-8 md:py-0">
                   <p className="text-sm font-semibold text-black-text text-center md:text-left">
                      Parceiros globais que confiam em nós
