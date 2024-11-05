@@ -4,7 +4,7 @@ export const Statistics: React.FC = () => {
    return (
       <React.Fragment>
          <div className="bg-white-default py-16 container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-y-8">
                <StatisticsItem
                   title="+ [X] m² Proteção Florestal"
                   description="Cada UCS adicional protege mais [X] m² de floresta, contribuindo para a preservação do meio ambiente."
