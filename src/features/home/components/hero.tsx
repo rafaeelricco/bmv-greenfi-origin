@@ -2,8 +2,10 @@
 
 import { Background } from '@/src/components/icons/background'
 import { Button } from '@/src/components/ui/button'
+import { ArrowRight, Info } from 'lucide-react'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export const Hero: React.FC = () => {
@@ -53,7 +55,20 @@ export const Hero: React.FC = () => {
                         fill
                         className="object-cover object-center"
                         priority
+                        quality={100}
                      />
+                     <div className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-md hover:bg-white-default/80 transition-colors cursor-pointer">
+                        <Link
+                           href={'#'}
+                           className="bg-green-default rounded-md w-6 h-6 flex items-center justify-center p-1"
+                        >
+                           <Info className="text-yellow-default" />
+                        </Link>
+                        <p className="text-sm font-semibold text-black-text">
+                           Por que adquirir mais UCS?
+                        </p>
+                        <ArrowRight className="w-4 h-4" />
+                     </div>
                   </div>
                </div>
             </div>
