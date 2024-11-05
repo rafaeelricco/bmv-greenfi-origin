@@ -1,6 +1,5 @@
 'use client'
 
-import { Logo } from '@/components/icons/logo'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import {
@@ -25,10 +24,15 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                className
             )}
          >
-            <div className="container-bmv flex items-center justify-between">
-               <Logo className="w-24 antialiased" />
+            <div className="container flex items-center justify-between">
+               <img
+                  loading="lazy"
+                  fetchPriority="high"
+                  src="/logo-header.png"
+                  alt="logo-header"
+               />
                <div className="grid items-center gap-12">
-                  <div className="hidden grid-flow-col items-center gap-12 lg:grid">
+                  <div className="hidden grid-flow-col items-center gap-12 md:grid">
                      {items.map((item, index) => (
                         <ul className="w-full" key={item.id + index}>
                            <li>
@@ -45,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                                           ) : (
                                              <Link
                                                 href={item.link}
-                                                className="font-sf-pro-display text-black-500 hover:text-black-500/80 flex-shrink cursor-pointer hover:underline"
+                                                className="font-sf-pro-display text-black-500 hover:text-black-500/80 flex-shrink cursor-pointer hover:underline font-medium"
                                                 target={
                                                    item.external ? '_blank' : '_self'
                                                 }
@@ -61,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                                        </div>
                                     </TooltipTrigger>
                                     <TooltipContent side="bottom">
-                                       <p className="font-sf-pro-display text-base">
+                                       <p className="font-sf-pro-display text-base font-medium">
                                           {item.tooltip}
                                        </p>
                                     </TooltipContent>
@@ -72,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                      ))}
                   </div>
                </div>
-               <div className="lg:hidden">
+               <div className="md:hidden">
                   <Sheet>
                      <SheetTrigger asChild>
                         <Button size="icon" variant="outline">

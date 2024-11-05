@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
    darkMode: ['class'],
@@ -13,7 +12,10 @@ const config: Config = {
       extend: {
          container: {
             center: true,
-            padding: '1rem'
+            padding: '1rem',
+            screens: {
+               '2xl': '1636px'
+            }
          },
          colors: {
             background: 'var(--background)',
@@ -99,47 +101,7 @@ const config: Config = {
          }
       }
    },
-   plugins: [
-      require('tailwindcss-animate'),
-      plugin(function ({ addComponents, theme }) {
-         const containers = {
-            '.container-bmv': {
-               width: '100%',
-               marginLeft: 'auto',
-               marginRight: 'auto',
-               paddingLeft: '4vw',
-               paddingRight: '4vw',
-               '@screen md': {
-                  paddingLeft: '8vw',
-                  paddingRight: '8vw'
-               }
-            },
-            '.container-bmv-left': {
-               width: '100%',
-               marginLeft: 'auto',
-               marginRight: 'auto',
-               paddingLeft: '4vw',
-               paddingRight: '0',
-               '@screen md': {
-                  paddingLeft: '8vw',
-                  paddingRight: '0'
-               }
-            },
-            '.container-bmv-right': {
-               width: '100%',
-               marginLeft: 'auto',
-               marginRight: 'auto',
-               paddingLeft: '0',
-               paddingRight: '4vw',
-               '@screen md': {
-                  paddingLeft: '0',
-                  paddingRight: '8vw'
-               }
-            }
-         }
-         addComponents(containers)
-      })
-   ]
+   plugins: [require('tailwindcss-animate')]
 }
 
 export default config
