@@ -15,6 +15,16 @@ export function middleware(request: NextRequest) {
    const locale = request.cookies.get('locale')?.value || i18n.defaultLocale
 
    /**
+    * @dev Skip locale redirect for public assets and images
+    */
+   if (
+      pathname.startsWith('/public/') ||
+      pathname.match(/\.(jpg|jpeg|png|gif|ico|svg)$/)
+   ) {
+      return NextResponse.next()
+   }
+
+   /**
     * @dev Check if the pathname is just a locale (e.g., /pt, /en)
     * @notice This prevents users from accessing bare locale paths
     */
@@ -68,6 +78,6 @@ export const config = {
        * - favicon.ico (favicon file)
        * - public (public assets)
        */
-      '/((?!api|_next/static|_next/image|favicon.ico|svgs/|home/|images/|public/).*)'
+      '/((?!api|_next/static|_next/image|favicon.ico|public/).*)'
    ]
 }
