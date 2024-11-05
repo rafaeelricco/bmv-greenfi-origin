@@ -1,0 +1,24 @@
+{
+   "common": {
+      "contact": "Entre em contato",
+      "contact_us": "Fale conosco",
+      "start_project": "Começar um projeto",
+      "know_projects": "Conheça meus projetos"
+   },
+   "hero": {
+      "title": {
+         "p1": "Descubra o poder da",
+         "p2": "Colaboração",
+         "p3": " para realizar suas ideias"
+      },
+      "subtitle": "Mais que desenvolvimento, uma rede de talentos pronta para transformar seus sonhos em realidade digital."
+   },
+   "projects": {
+      "title": "Projetos",
+      "subtitle": "No coração de cada projeto inovador, há uma ideia desafiadora. Aqui, transformei essas ideias em realidade, ultrapassando limites com soluções front-end. Cada projeto concluído demonstra minha habilidade em converter visões em resultados excepcionais. Navegue pelo meu portfólio e inspire-se."
+   },
+   "services": {
+      "title": "Serviços",
+      "subtitle": "Sou especializado em transformar ideias em realidades digitais por meio de soluções front-end personalizadas. Desenvolvo interfaces interativas e tenho habilidade para lidar com implementações avançadas, priorizando a personalização e a atenção aos detalhes, a fim de criar experiências envolventes."
+   }
+}
