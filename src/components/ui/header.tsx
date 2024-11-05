@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                className
             )}
          >
-            <div className="container flex items-center justify-between">
+            <div className="flex items-center justify-between w-full container px-4 md:px-0">
                <img
                   loading="lazy"
                   fetchPriority="high"
