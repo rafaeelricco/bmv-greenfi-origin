@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
                         </p>
                      </div>
                      <div className="flex flex-col gap-2">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight">
                            Bem-vindo ao
                            <br className="hidden md:block" /> futuro&nbsp;
                            <span className="from-gradient-start to-gradient-end bg-gradient-to-tl bg-clip-text text-transparent">
