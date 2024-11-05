@@ -1,5 +1,58 @@
 {
    "hero": {
-      "title": "Bem-vindo ao meu portfólio"
+      "status": {
+         "active": "Sua UCS exclusiva está ativada!"
+      },
+      "title": {
+         "first": "Bem-vindo ao",
+         "highlight": "sustentável"
+      },
+      "description": "Transformando sustentabilidade em valor real através da proteção da Amazônia e investimentos responsáveis.",
+      "buttons": {
+         "primary": "Resgatar minha UCS",
+         "secondary": "Saiba mais"
+      },
+      "info": {
+         "question": "Por que adquirir mais UCS?"
+      },
+      "partners": {
+         "title": "Parceiros globais que confiam em nós"
+      }
+   },
+   "statistics": {
+      "items": {
+         "forest": {
+            "title": "+ [X] m² Proteção Florestal",
+            "description": "Cada UCS adicional protege mais [X] m² de floresta, contribuindo para a preservação do meio ambiente."
+         },
+         "water": {
+            "title": "+ [Y] Litros Preservação de Água",
+            "description": "Preservação de Água Preserve [Y] litros de água limpa e ajude a manter a vitalidade dos recursos hídricos locais."
+         },
+         "families": {
+            "title": "+ [Z] Famílias Apoio às Comunidades",
+            "description": "Cada UCS apoia [Z] famílias em comunidades locais, promovendo sustentabilidade e desenvolvimento social."
+         }
+      }
+   },
+   "header": {
+      "navigation": {
+         "home": {
+            "label": "Início",
+            "tooltip": "Página inicial."
+         },
+         "about": {
+            "label": "Sobre a UCS",
+            "tooltip": "Conheça a UCS."
+         },
+         "sustainability": {
+            "label": "Sobre a sustentabilidade",
+            "tooltip": "Entre em contato com a UCS."
+         }
+      },
+      "accessibility": {
+         "toggleMenu": "Toggle Menu",
+         "copyright": "© 2024 Ricco Ltda. All rights reserved."
+      }
    }
 }

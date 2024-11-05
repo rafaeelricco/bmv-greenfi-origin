@@ -1,21 +1,24 @@
+import { DictionaryProps } from '@/src/types/dictionary'
 import React from 'react'
 
-export const Statistics: React.FC = () => {
+export const Statistics: React.FC<DictionaryProps> = ({
+   dictionary
+}: DictionaryProps) => {
    return (
       <React.Fragment>
          <div className="bg-white-default py-16 container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-y-8">
                <StatisticsItem
-                  title="+ [X] m² Proteção Florestal"
-                  description="Cada UCS adicional protege mais [X] m² de floresta, contribuindo para a preservação do meio ambiente."
+                  title={dictionary.statistics.items.forest.title}
+                  description={dictionary.statistics.items.forest.description}
                />
                <StatisticsItem
-                  title="+ [Y] Litros Preservação de Água"
-                  description="Preservação de Água Preserve [Y] litros de água limpa e ajude a manter a vitalidade dos recursos hídricos locais."
+                  title={dictionary.statistics.items.water.title}
+                  description={dictionary.statistics.items.water.description}
                />
                <StatisticsItem
-                  title="+ [Z] Famílias Apoio às Comunidades"
-                  description="Cada UCS apoia [Z] famílias em comunidades locais, promovendo sustentabilidade e desenvolvimento social."
+                  title={dictionary.statistics.items.families.title}
+                  description={dictionary.statistics.items.families.description}
                />
             </div>
          </div>

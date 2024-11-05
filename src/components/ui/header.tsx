@@ -10,13 +10,44 @@ import {
 } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 import { general_routes } from '@/routes/general'
+import { DictionaryProps } from '@/src/types/dictionary'
 import { PanelLeftIcon } from 'lucide-react'
-import Image from 'next/image'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) => {
+   const items = [
+      {
+         id: 1,
+         label: dictionary.header.navigation.home.label,
+         tooltip: dictionary.header.navigation.home.tooltip,
+         disabled: false,
+         scrollTo: '#',
+         link: general_routes.home,
+         external: false
+      },
+      {
+         id: 2,
+         label: dictionary.header.navigation.about.label,
+         tooltip: dictionary.header.navigation.about.tooltip,
+         disabled: false,
+         scrollTo: '#',
+         link: '/',
+         external: false
+      },
+      {
+         id: 3,
+         label: dictionary.header.navigation.sustainability.label,
+         tooltip: dictionary.header.navigation.sustainability.tooltip,
+         disabled: false,
+         scrollTo: '#',
+         link: '/',
+         external: false
+      }
+   ]
+
    return (
       <React.Fragment>
          <nav
@@ -84,7 +115,9 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                      <SheetTrigger asChild>
                         <Button size="icon" variant="outline">
                            <PanelLeftIcon className="h-5 w-5" />
-                           <span className="sr-only">Toggle Menu</span>
+                           <span className="sr-only">
+                              {dictionary.header.accessibility.toggleMenu}
+                           </span>
                         </Button>
                      </SheetTrigger>
                      <SheetContent side="right" className="sm:max-w-xs">
@@ -95,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
                               prefetch={false}
                            >
                               <span className="sr-only">
-                                 © 2024 Ricco Ltda. All rights reserved.
+                                 {dictionary.header.accessibility.copyright}
                               </span>
                            </Link>
                            {items.map((item, index) => (
@@ -118,37 +151,8 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
    )
 }
 
-const items = [
-   {
-      id: 1,
-      label: 'Início',
-      tooltip: 'Página inicial.',
-      disabled: false,
-      scrollTo: '#',
-      link: general_routes.home,
-      external: false
-   },
-   {
-      id: 2,
-      label: 'Sobre a UCS',
-      tooltip: 'Conheça a UCS.',
-      disabled: false,
-      scrollTo: '#',
-      link: '/',
-      external: false
-   },
-   {
-      id: 3,
-      label: 'Sobre a sustentabilidade',
-      tooltip: 'Entre em contato com a UCS.',
-      disabled: false,
-      scrollTo: '#',
-      link: '/',
-      external: false
-   }
-]
-
 type HeaderProps = {
+   dictionary: DictionaryProps['dictionary']
    className?: string
 }
 
