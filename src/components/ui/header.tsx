@@ -11,6 +11,7 @@ import {
 import { cn } from '@/lib/utils'
 import { general_routes } from '@/routes/general'
 import { PanelLeftIcon } from 'lucide-react'
+import Image from 'next/image'
 
 import Link from 'next/link'
 import React from 'react'
@@ -25,13 +26,13 @@ const Header: React.FC<HeaderProps> = ({ className }: HeaderProps) => {
             )}
          >
             <div className="flex items-center justify-between w-full container px-4 md:px-0">
-               {/* @next/next/no-img-element */}
-               <img
-                  loading="lazy"
-                  fetchPriority="high"
+               <Image
                   src="/logo-header.png"
                   alt="logo-header"
-                  className="w-64"
+                  width={315}
+                  height={33}
+                  priority
+                  className="w-64 lg:w-auto"
                />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 md:grid">
