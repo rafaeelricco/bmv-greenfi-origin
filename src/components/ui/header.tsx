@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
       <React.Fragment>
          <nav
             className={cn(
-               'w-full py-4 md:py-6 grid justify-items-center border-b border-gray-border',
+               'w-full py-4 md:py-6 grid justify-items-center border-b border-gray-border min-h-[82px]',
                className
             )}
          >
@@ -139,7 +139,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                            </span>
                         </Button>
                      </DrawerTrigger>
-                     <DrawerContent className="max-w-xs bg-white-default fixed w-[40rem] h-screen overflow-y-scroll overflow-x-hidden flex flex-col top-0 right-0 z-[1000] py-12 2xl:py-14 px-12 focus:outline-none space-y-8">
+                     <DrawerContent className="max-w-xs bg-white-default fixed w-[40rem] h-screen overflow-y-scroll overflow-x-hidden flex flex-col top-0 right-0 z-[998] py-12 2xl:py-14 px-12 focus:outline-none space-y-8">
                         <DrawerHeader className="p-0">
                            <DrawerTitle className="p-0">
                               <Image
@@ -241,10 +241,10 @@ const SelectLanguage: React.FC<{ className?: string }> = ({
          >
             <SelectTrigger
                aria-label="button-select-language"
-               className="rounded-3xl bg-green-default space-x-2 px-2"
+               className="rounded-3xl bg-green-default flex items-center justify-between gap-2 px-2"
             >
                {curr_locale ? (
-                  <React.Fragment>
+                  <div className="flex items-center gap-2">
                      {curr_locale == 'pt' && <BrazilSVG width={24} height={24} />}
                      {curr_locale == 'en' && (
                         <UnitedStatesSVG width={24} height={24} />
@@ -252,12 +252,12 @@ const SelectLanguage: React.FC<{ className?: string }> = ({
                      <span className="text-xs text-white-default font-semibold md:text-sm">
                         {labels[curr_locale]}
                      </span>
-                  </React.Fragment>
+                  </div>
                ) : (
                   <Skeleton className="h-5 w-[180px]" />
                )}
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="z-[999]">
                <SelectGroup>
                   {i18n.locales.map(
                      (locale) =>
