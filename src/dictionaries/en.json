@@ -1,24 +1,79 @@
 {
-   "common": {
-      "contact": "Entre em contato",
-      "contact_us": "Fale conosco",
-      "start_project": "Começar um projeto",
-      "know_projects": "Conheça meus projetos"
-   },
    "hero": {
-      "title": {
-         "p1": "Descubra o poder da",
-         "p2": "Colaboração",
-         "p3": " para realizar suas ideias"
+      "status": {
+         "active": "Your exclusive UCS is activated!"
       },
-      "subtitle": "Mais que desenvolvimento, uma rede de talentos pronta para transformar seus sonhos em realidade digital."
+      "title": {
+         "first": "Welcome to",
+         "highlight": "sustainable"
+      },
+      "description": "Transforming sustainability into real value through Amazon protection and responsible investments.",
+      "buttons": {
+         "primary": "Redeem my UCS",
+         "secondary": "Learn more"
+      },
+      "info": {
+         "question": "Why acquire more UCS?"
+      },
+      "partners": {
+         "title": "Global partners who trust us"
+      }
    },
-   "projects": {
-      "title": "Projetos",
-      "subtitle": "No coração de cada projeto inovador, há uma ideia desafiadora. Aqui, transformei essas ideias em realidade, ultrapassando limites com soluções front-end. Cada projeto concluído demonstra minha habilidade em converter visões em resultados excepcionais. Navegue pelo meu portfólio e inspire-se."
+   "statistics": {
+      "items": {
+         "forest": {
+            "title": "+ [X] m² Forest Protection",
+            "description": "Each additional UCS protects [X] m² more of forest, contributing to environmental preservation."
+         },
+         "water": {
+            "title": "+ [Y] Liters Water Preservation",
+            "description": "Water Preservation Preserve [Y] liters of clean water and help maintain local water resources vitality."
+         },
+         "families": {
+            "title": "+ [Z] Families Community Support",
+            "description": "Each UCS supports [Z] families in local communities, promoting sustainability and social development."
+         }
+      }
    },
-   "services": {
-      "title": "Serviços",
-      "subtitle": "Sou especializado em transformar ideias em realidades digitais por meio de soluções front-end personalizadas. Desenvolvo interfaces interativas e tenho habilidade para lidar com implementações avançadas, priorizando a personalização e a atenção aos detalhes, a fim de criar experiências envolventes."
+   "header": {
+      "navigation": {
+         "home": {
+            "label": "Home",
+            "tooltip": "Home page."
+         },
+         "about": {
+            "label": "About UCS",
+            "tooltip": "Learn about UCS."
+         },
+         "sustainability": {
+            "label": "About sustainability",
+            "tooltip": "Contact UCS."
+         }
+      },
+      "accessibility": {
+         "toggleMenu": "Toggle Menu",
+         "copyright": "© 2024 Ricco Ltda. All rights reserved."
+      }
+   },
+   "whyBuyUcs": {
+      "title": "Why acquire more UCS?",
+      "items": {
+         "impact": {
+            "title": "Tangible impact",
+            "description": "Each UCS represents a concrete preservation action."
+         },
+         "legacy": {
+            "title": "Sustainable legacy",
+            "description": "Create a better future for next generations."
+         },
+         "recognition": {
+            "title": "Recognition",
+            "description": "Receive a personalized certificate for your contribution."
+         },
+         "community": {
+            "title": "Community",
+            "description": "Join a global network of sustainability advocates."
+         }
+      }
    }
 }

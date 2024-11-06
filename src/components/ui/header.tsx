@@ -1,17 +1,29 @@
 'use client'
 
+import { BrazilSVG, UnitedStatesSVG } from '@/components/icons/flags'
 import { Button } from '@/components/ui/button'
+import {
+   Select,
+   SelectContent,
+   SelectGroup,
+   SelectItem,
+   SelectTrigger
+} from '@/components/ui/select'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Skeleton } from '@/components/ui/skeleton'
 import {
    Tooltip,
    TooltipContent,
    TooltipProvider,
    TooltipTrigger
 } from '@/components/ui/tooltip'
+import { i18n } from '@/i18n-config'
 import { cn } from '@/lib/utils'
 import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/src/types/dictionary'
+import { setCookie } from 'cookies-next'
 import { PanelLeftIcon } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -76,14 +88,14 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                                        <div>
                                           {item.disabled ? (
                                              <React.Fragment>
-                                                <p className="font-sf-pro-display text-black-500 flex-shrink cursor-default opacity-50">
+                                                <p className="font-sf-pro-display text-green-default font-semibold flex-shrink cursor-default opacity-50">
                                                    {item.label}
                                                 </p>
                                              </React.Fragment>
                                           ) : (
                                              <Link
                                                 href={item.link}
-                                                className="font-sf-pro-display text-black-500 hover:text-black-500/80 flex-shrink cursor-pointer hover:underline font-medium"
+                                                className="font-sf-pro-display text-green-default hover:text-green-default/80 flex-shrink cursor-pointer hover:underline font-semibold"
                                                 target={
                                                    item.external ? '_blank' : '_self'
                                                 }
@@ -108,6 +120,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                            </li>
                         </ul>
                      ))}
+                     <SelectLanguage />
                   </div>
                </div>
                <div className="md:hidden">
@@ -120,26 +133,47 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                            </span>
                         </Button>
                      </SheetTrigger>
-                     <SheetContent side="right" className="sm:max-w-xs">
-                        <nav className="grid gap-6 text-lg font-medium">
-                           <Link
-                              href="#"
-                              className="bg-primary text-primary-foreground group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold md:text-base"
-                              prefetch={false}
-                           >
-                              <span className="sr-only">
-                                 {dictionary.header.accessibility.copyright}
-                              </span>
-                           </Link>
+                     <SheetContent side="right" className="max-w-xs">
+                        <nav className="grid gap-6 mt-4">
+                           <SelectLanguage className="w-fit" />
                            {items.map((item, index) => (
-                              <Link
-                                 key={item.id + index}
-                                 href={item.link}
-                                 className="text-muted-foreground flex items-center gap-4 px-2.5 hover:text-foreground hover:underline"
-                                 prefetch={false}
-                              >
-                                 {item.label}
-                              </Link>
+                              <div key={item.id + index}>
+                                 <TooltipProvider>
+                                    <Tooltip>
+                                       <TooltipTrigger asChild>
+                                          <div>
+                                             {item.disabled ? (
+                                                <p className="font-sf-pro-display text-green-default font-semibold opacity-50">
+                                                   {item.label}
+                                                </p>
+                                             ) : (
+                                                <Link
+                                                   href={item.link}
+                                                   className="font-sf-pro-display text-green-default hover:text-green-default/80 hover:underline font-semibold"
+                                                   target={
+                                                      item.external
+                                                         ? '_blank'
+                                                         : '_self'
+                                                   }
+                                                   rel={
+                                                      item.external
+                                                         ? 'noreferrer'
+                                                         : undefined
+                                                   }
+                                                >
+                                                   {item.label}
+                                                </Link>
+                                             )}
+                                          </div>
+                                       </TooltipTrigger>
+                                       <TooltipContent side="right">
+                                          <p className="font-sf-pro-display text-base font-medium">
+                                             {item.tooltip}
+                                          </p>
+                                       </TooltipContent>
+                                    </Tooltip>
+                                 </TooltipProvider>
+                              </div>
                            ))}
                         </nav>
                      </SheetContent>
@@ -148,6 +182,75 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
             </div>
          </nav>
       </React.Fragment>
+   )
+}
+
+const SelectLanguage: React.FC<{ className?: string }> = ({
+   className
+}: {
+   className?: string
+}) => {
+   const router = useRouter()
+   const pathName = usePathname()
+
+   const curr_locale = i18n.locales.find((locale) => {
+      return locale === pathName.split('/')[1]
+   }) as 'en' | 'pt'
+
+   const labels = { en: 'Inglês (EUA)', pt: 'Português (PT-BR)' }
+
+   const redirectedPathName = (locale: string) => {
+      if (!pathName) return '/'
+      const segments = pathName.split('/')
+      segments[1] = locale
+      return segments.join('/')
+   }
+
+   return (
+      <div className={cn(className)}>
+         <Select
+            value={
+               i18n.locales.find((locale) => {
+                  return locale === pathName.split('/')[1]
+               }) as string
+            }
+            onValueChange={(value: string) => {
+               router.push(redirectedPathName(value))
+               setCookie('locale', value)
+            }}
+         >
+            <SelectTrigger
+               aria-label="button-select-language"
+               className="rounded-3xl bg-green-default space-x-2 px-2"
+            >
+               {curr_locale ? (
+                  <React.Fragment>
+                     {curr_locale == 'pt' && <BrazilSVG width={24} height={24} />}
+                     {curr_locale == 'en' && (
+                        <UnitedStatesSVG width={24} height={24} />
+                     )}
+                     <span className="text-xs text-white-default font-semibold md:text-sm">
+                        {labels[curr_locale]}
+                     </span>
+                  </React.Fragment>
+               ) : (
+                  <Skeleton className="h-5 w-[180px]" />
+               )}
+            </SelectTrigger>
+            <SelectContent>
+               <SelectGroup>
+                  {i18n.locales.map(
+                     (locale) =>
+                        (
+                           <SelectItem key={locale} value={locale}>
+                              {labels[locale as 'en' | 'pt']}
+                           </SelectItem>
+                        ) as React.ReactNode
+                  )}
+               </SelectGroup>
+            </SelectContent>
+         </Select>
+      </div>
    )
 }
 

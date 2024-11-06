@@ -68,7 +68,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                   </div>
                </div>
             </div>
-            <div className="min-h-[224px] border-t border-b border-gray-border grid items-center bg-white-default mt-12 lg:mt-0">
+            {/* <div className="min-h-[224px] border-t border-b border-gray-border grid items-center bg-white-default mt-12 lg:mt-0">
                <div className="grid grid-cols-1 md:grid-flow-col items-center container gap-8 md:gap-2 px-4 md:px-0 py-8 md:py-0">
                   <p className="text-sm font-semibold text-black-text text-center md:text-left">
                      {dictionary.hero.partners.title}
@@ -118,7 +118,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                      />
                   </div>
                </div>
-            </div>
+            </div> */}
          </div>
       </React.Fragment>
    )
