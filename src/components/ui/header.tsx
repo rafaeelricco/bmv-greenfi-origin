@@ -3,13 +3,19 @@
 import { BrazilSVG, UnitedStatesSVG } from '@/components/icons/flags'
 import { Button } from '@/components/ui/button'
 import {
+   Drawer,
+   DrawerContent,
+   DrawerHeader,
+   DrawerTitle,
+   DrawerTrigger
+} from '@/components/ui/drawer'
+import {
    Select,
    SelectContent,
    SelectGroup,
    SelectItem,
    SelectTrigger
 } from '@/components/ui/select'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Skeleton } from '@/components/ui/skeleton'
 import {
    Tooltip,
@@ -124,60 +130,74 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                   </div>
                </div>
                <div className="md:hidden">
-                  <Sheet>
-                     <SheetTrigger asChild>
+                  <Drawer direction="right">
+                     <DrawerTrigger asChild>
                         <Button size="icon" variant="outline">
                            <PanelLeftIcon className="h-5 w-5" />
                            <span className="sr-only">
                               {dictionary.header.accessibility.toggleMenu}
                            </span>
                         </Button>
-                     </SheetTrigger>
-                     <SheetContent side="right" className="max-w-xs">
-                        <nav className="grid gap-6 mt-4">
+                     </DrawerTrigger>
+                     <DrawerContent className="max-w-xs bg-white-default fixed w-[40rem] h-screen overflow-y-scroll overflow-x-hidden flex flex-col top-0 right-0 z-[1000] py-12 2xl:py-14 px-12 focus:outline-none space-y-8">
+                        <DrawerHeader className="p-0">
+                           <DrawerTitle className="p-0">
+                              <Image
+                                 src="/logo-header.png"
+                                 alt="logo-header"
+                                 width={315}
+                                 height={33}
+                                 priority
+                                 className="w-64"
+                              />
+                           </DrawerTitle>
+                        </DrawerHeader>
+                        <div className="grid gap-8">
                            <SelectLanguage className="w-fit" />
-                           {items.map((item, index) => (
-                              <div key={item.id + index}>
-                                 <TooltipProvider>
-                                    <Tooltip>
-                                       <TooltipTrigger asChild>
-                                          <div>
-                                             {item.disabled ? (
-                                                <p className="font-sf-pro-display text-green-default font-semibold opacity-50">
-                                                   {item.label}
-                                                </p>
-                                             ) : (
-                                                <Link
-                                                   href={item.link}
-                                                   className="font-sf-pro-display text-green-default hover:text-green-default/80 hover:underline font-semibold"
-                                                   target={
-                                                      item.external
-                                                         ? '_blank'
-                                                         : '_self'
-                                                   }
-                                                   rel={
-                                                      item.external
-                                                         ? 'noreferrer'
-                                                         : undefined
-                                                   }
-                                                >
-                                                   {item.label}
-                                                </Link>
-                                             )}
-                                          </div>
-                                       </TooltipTrigger>
-                                       <TooltipContent side="right">
-                                          <p className="font-sf-pro-display text-base font-medium">
-                                             {item.tooltip}
-                                          </p>
-                                       </TooltipContent>
-                                    </Tooltip>
-                                 </TooltipProvider>
-                              </div>
-                           ))}
-                        </nav>
-                     </SheetContent>
-                  </Sheet>
+                           <div className="grid gap-6">
+                              {items.map((item, index) => (
+                                 <div key={item.id + index}>
+                                    <TooltipProvider>
+                                       <Tooltip>
+                                          <TooltipTrigger asChild>
+                                             <div>
+                                                {item.disabled ? (
+                                                   <p className="font-sf-pro-display text-green-default font-semibold opacity-50">
+                                                      {item.label}
+                                                   </p>
+                                                ) : (
+                                                   <Link
+                                                      href={item.link}
+                                                      className="font-sf-pro-display text-green-default hover:text-green-default/80 hover:underline font-semibold"
+                                                      target={
+                                                         item.external
+                                                            ? '_blank'
+                                                            : '_self'
+                                                      }
+                                                      rel={
+                                                         item.external
+                                                            ? 'noreferrer'
+                                                            : undefined
+                                                      }
+                                                   >
+                                                      {item.label}
+                                                   </Link>
+                                                )}
+                                             </div>
+                                          </TooltipTrigger>
+                                          <TooltipContent side="right">
+                                             <p className="font-sf-pro-display text-base font-medium">
+                                                {item.tooltip}
+                                             </p>
+                                          </TooltipContent>
+                                       </Tooltip>
+                                    </TooltipProvider>
+                                 </div>
+                              ))}
+                           </div>
+                        </div>
+                     </DrawerContent>
+                  </Drawer>
                </div>
             </div>
          </nav>
