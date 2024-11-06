@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       }
    },
    env: {
-      API_TOKEN: process.env.API_TOKEN,
+      API_TOKEN: process.env.API_TOKEN
    }
 }
 

@@ -1,4 +1,4 @@
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 import { HomePageComponent } from '@/features/home/home'
 import { getDictionary } from '@/get-dictionary'

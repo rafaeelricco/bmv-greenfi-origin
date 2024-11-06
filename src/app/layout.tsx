@@ -1,38 +1,55 @@
+import '../styles/embla.css'
+import '../styles/globals.css'
+
 import { i18n } from '@/i18n-config'
 import type { Metadata } from 'next'
-import './globals.css'
 
 export const metadata: Metadata = {
    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
-   title: 'BMV Global | Soluções Sustentáveis e ESG para Empresas',
+   title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
    description:
-      'Explore soluções de sustentabilidade com a BMV Global, líder em ESG e conservação de biodiversidade. Descubra como a valorização da natureza e UCS (Unidades de Crédito de Sustentabilidade) podem gerar impacto positivo e viabilizar crescimento econômico sustentável.',
-   authors: [{ name: 'BMV Global' }],
+      'Conheça as iniciativas do Banco da Amazônia voltadas para o desenvolvimento sustentável da região amazônica, promovendo práticas socioambientais responsáveis e soluções financeiras eficazes.',
+   authors: [{ name: 'Banco da Amazônia' }],
    keywords: [
-      'ESG',
-      'biodiversidade',
+      'Banco da Amazônia',
       'sustentabilidade',
-      'créditos de carbono',
-      'CPR Verde',
-      'soluções ambientais',
-      'economia verde',
-      'impacto ambiental',
-      'conservação da natureza'
+      'desenvolvimento sustentável',
+      'responsabilidade socioambiental',
+      'Amazônia',
+      'crédito sustentável',
+      'políticas ambientais',
+      'ESG',
+      'conservação ambiental',
+      'financiamento verde'
    ],
    openGraph: {
-      title: 'BMV Global | Inovação em Sustentabilidade e ESG',
+      title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
       description:
-         'A BMV Global integra tecnologia e conservação para fomentar projetos sustentáveis e impacto ambiental positivo.',
-      type: 'website'
+         'Descubra como o Banco da Amazônia promove o desenvolvimento sustentável na região amazônica por meio de práticas socioambientais responsáveis e soluções financeiras eficazes.',
+      type: 'website',
+      url: 'https://www.bancoamazonia.com.br/o-banco/sustentabilidade',
+      images: [
+         {
+            url: 'https://www.bancoamazonia.com.br/images/sustentabilidade.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'Banco da Amazônia - Sustentabilidade'
+         }
+      ]
    },
    twitter: {
       card: 'summary_large_image',
-      title: 'BMV Global | Inovação em Sustentabilidade e ESG',
+      title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
       description:
-         'A BMV Global integra tecnologia e conservação para fomentar projetos sustentáveis e impacto ambiental positivo.'
+         'Descubra como o Banco da Amazônia promove o desenvolvimento sustentável na região amazônica por meio de práticas socioambientais responsáveis e soluções financeiras eficazes.',
+      images: [
+         {
+            url: 'https://www.bancoamazonia.com.br/images/sustentabilidade.jpg',
+            alt: 'Banco da Amazônia - Sustentabilidade'
+         }
+      ]
    }
 }
-
 export async function generateStaticParams() {
    return i18n.locales.map((locale) => ({ lang: locale }))
 }

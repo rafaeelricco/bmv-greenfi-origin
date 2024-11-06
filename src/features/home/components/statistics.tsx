@@ -6,8 +6,8 @@ export const Statistics: React.FC<DictionaryProps> = ({
 }: DictionaryProps) => {
    return (
       <React.Fragment>
-         <div className="bg-white-default py-16 container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-y-8">
+         <div className="py-16 bg-transparent">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-y-8 container">
                <StatisticsItem
                   title={dictionary.statistics.items.forest.title}
                   description={dictionary.statistics.items.forest.description}

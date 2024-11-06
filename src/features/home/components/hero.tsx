@@ -12,7 +12,7 @@ import React from 'react'
 export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
    return (
       <React.Fragment>
-         <Background className="absolute left-1/2 -translate-x-1/2 h-[calc(100vh-82px)] opacity-80 w-screen overflow-hidden -z-10" />
+         <Background className="absolute left-1/2 -translate-x-1/2 h-[calc(100vh-82px)] opacity-80 w-screen -z-10" />
          <div className="min-h-[calc(100vh-82px)] flex flex-col justify-between relative">
             <div className="flex-1 flex items-center container px-4 md:px-0">
                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center w-full">
