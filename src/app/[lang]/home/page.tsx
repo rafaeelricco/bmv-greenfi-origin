@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 import { HomePageComponent } from '@/features/home/home'
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'

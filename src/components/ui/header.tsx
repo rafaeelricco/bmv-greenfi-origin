@@ -75,14 +75,14 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
             )}
          >
             <div className="flex items-center justify-between w-full container px-4 md:px-0">
-               <Image
-                  src="/logo-header.png"
-                  alt="logo-header"
-                  width={315}
-                  height={33}
-                  priority
-                  className="w-64 lg:w-[315px]"
-               />
+               <Link href={general_routes.home}>
+                  <img
+                     src="/logo-header.png"
+                     alt="logo-header"
+                     loading="lazy"
+                     className="object-contain"
+                  />
+               </Link>
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 md:grid">
                      {items.map((item, index) => (
