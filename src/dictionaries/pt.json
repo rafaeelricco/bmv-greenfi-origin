@@ -54,5 +54,26 @@
          "toggleMenu": "Toggle Menu",
          "copyright": "© 2024 Ricco Ltda. All rights reserved."
       }
+   },
+   "whyBuyUcs": {
+      "title": "Por que adquirir mais UCS?",
+      "items": {
+         "impact": {
+            "title": "Impacto tangível",
+            "description": "Cada UCS representa uma ação concreta de preservação."
+         },
+         "legacy": {
+            "title": "Legado sustentável",
+            "description": "Crie um futuro melhor para as próximas gerações."
+         },
+         "recognition": {
+            "title": "Reconhecimento",
+            "description": "Receba um certificado personalizado por sua contribuição."
+         },
+         "community": {
+            "title": "Comunidade",
+            "description": "Junte-se a uma rede global de defensores da sustentabilidade."
+         }
+      }
    }
 }

@@ -6,6 +6,7 @@ import { Header } from '@/src/components/ui/header'
 import { DictionaryProps } from '@/src/types/dictionary'
 
 import React from 'react'
+import { WhyBuyUcs } from './components/why-buy-ucs'
 
 export const HomePageComponent: React.FC<DictionaryProps> = ({
    dictionary
@@ -15,6 +16,7 @@ export const HomePageComponent: React.FC<DictionaryProps> = ({
          <Header dictionary={dictionary} />
          <Hero dictionary={dictionary} />
          <Statistics dictionary={dictionary} />
+         <WhyBuyUcs dictionary={dictionary} />
       </React.Suspense>
    )
 }
