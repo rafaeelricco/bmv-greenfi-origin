@@ -55,6 +55,7 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
             'Convertidos [Número] hectares para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos.'
       }
    ]
+
    const OPTIONS: EmblaOptionsType = {
       align: 'start',
       slidesToScroll: 1,

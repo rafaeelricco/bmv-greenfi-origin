@@ -4,7 +4,7 @@
    --slide-spacing: 1rem;
    /* Mobile: 1.5 cards */
    --slide-size: 80%;
-   padding: 1.5rem 0;
+   padding: 2rem 0 0 0;
 }
 
 @media (min-width: 768px) {
