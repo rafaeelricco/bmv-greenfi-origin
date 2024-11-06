@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                   </div>
                </div>
                <div className="md:hidden">
-                  <Drawer direction="right">
+                  <Drawer direction="right" shouldScaleBackground={false}>
                      <DrawerTrigger asChild>
                         <Button size="icon" variant="outline">
                            <PanelLeftIcon className="h-5 w-5" />
