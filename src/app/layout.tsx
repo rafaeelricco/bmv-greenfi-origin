@@ -1,4 +1,4 @@
-import { i18n, Locale } from '@/i18n-config'
+import { i18n } from '@/i18n-config'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -37,15 +37,16 @@ export async function generateStaticParams() {
    return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
-export default function Root({
-   children,
-   params
-}: Readonly<{
+type RootLayoutProps = {
    children: React.ReactNode
-   params: { lang: Locale }
-}>) {
+   params: Promise<{ lang: string }>
+}
+
+export default async function Root({ children, params }: RootLayoutProps) {
+   const { lang } = await params
+
    return (
-      <html lang={params.lang} className="antialiased">
+      <html lang={lang} className="antialiased">
          <head>
             {/* eslint-disable-next-line @next/next/no-page-custom-font */}
             <link
