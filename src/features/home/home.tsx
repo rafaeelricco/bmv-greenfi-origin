@@ -1,5 +1,6 @@
 'use client'
 
+import { AboutBASA } from '@/features/home/components/about-basa'
 import { Hero } from '@/features/home/components/hero'
 import { Statistics } from '@/features/home/components/statistics'
 import { TransformingSustainability } from '@/features/home/components/transforming-sustainability/transforming-sustainability'
@@ -19,6 +20,7 @@ export const HomePageComponent: React.FC<DictionaryProps> = ({
          <Statistics dictionary={dictionary} />
          <WhyBuyUcs dictionary={dictionary} />
          <TransformingSustainability dictionary={dictionary} />
+         <AboutBASA dictionary={dictionary} />
       </React.Suspense>
    )
 }

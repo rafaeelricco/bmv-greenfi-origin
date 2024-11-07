@@ -45,7 +45,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                         </Button>
                      </div>
                   </div>
-                  <div className="w-full lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] h-[400px] md:h-[600px] 2xl:h-[600px] bg-green-default rounded-xl relative overflow-hidden">
+                  <div className="w-full lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] h-[400px] md:h-[600px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
                      <Image
                         src="/floresta-hero.jpg"
                         alt="Floresta hero"
@@ -54,7 +54,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                         priority
                         quality={50}
                      />
-                     <div className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-md hover:bg-white-default/80 transition-colors cursor-pointer">
+                     <div className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-xl hover:bg-white-default/80 transition-colors cursor-pointer">
                         <Link
                            href={'#'}
                            className="bg-green-default rounded-md w-6 h-6 flex items-center justify-center p-1"
@@ -69,57 +69,6 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                   </div>
                </div>
             </div>
-            {/* <div className="min-h-[224px] border-t border-b border-gray-border grid items-center bg-white-default mt-12 lg:mt-0">
-               <div className="grid grid-cols-1 md:grid-flow-col items-center container gap-8 md:gap-2 px-4 md:px-0 py-8 md:py-0">
-                  <p className="text-sm font-semibold text-black-text text-center md:text-left">
-                     {dictionary.hero.partners.title}
-                  </p>
-                  <div className="grid grid-cols-3 md:flex md:justify-end gap-8 md:gap-4">
-                     <Image
-                        src="/logo-01.png"
-                        alt="Partner Logo 1"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                     <Image
-                        src="/logo-02.png"
-                        alt="Partner Logo 2"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                     <Image
-                        src="/logo-03.png"
-                        alt="Partner Logo 3"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                     <Image
-                        src="/logo-04.png"
-                        alt="Partner Logo 4"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                     <Image
-                        src="/logo-05.png"
-                        alt="Partner Logo 5"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                     <Image
-                        src="/logo-06.png"
-                        alt="Partner Logo 6"
-                        width={72}
-                        height={40}
-                        className="object-contain"
-                     />
-                  </div>
-               </div>
-            </div> */}
          </div>
       </React.Fragment>
    )
