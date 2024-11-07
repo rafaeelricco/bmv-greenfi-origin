@@ -106,7 +106,7 @@ const CheckIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
          <path
             d="M8 11L10 13L14 9"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
          />

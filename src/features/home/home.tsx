@@ -8,7 +8,9 @@ import { WhyBuyUcs } from '@/features/home/components/why-buy-ucs'
 import { Header } from '@/src/components/ui/header'
 import { DictionaryProps } from '@/src/types/dictionary'
 
+import { Footer } from '@/src/components/ui/footer'
 import React from 'react'
+import { Pertners } from './components/pertners'
 
 export const HomePageComponent: React.FC<DictionaryProps> = ({
    dictionary
@@ -21,6 +23,8 @@ export const HomePageComponent: React.FC<DictionaryProps> = ({
          <WhyBuyUcs dictionary={dictionary} />
          <TransformingSustainability dictionary={dictionary} />
          <AboutBASA dictionary={dictionary} />
+         <Pertners dictionary={dictionary} />
+         <Footer dictionary={dictionary} />
       </React.Suspense>
    )
 }
