@@ -9,8 +9,8 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
    return (
       <React.Fragment>
          <div className="bg-green-default p-4 md:p-6">
-            <div className="container bg-[#FBEFD5] rounded-3xl px-4 sm:px-6 md:px-20 py-6 md:py-16 grid gap-4 md:gap-8">
-               <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-20">
+            <div className="container bg-[#FBEFD5] rounded-3xl px-6 md:px-20 py-8 md:py-16 grid gap-6 md:gap-8">
+               <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-20">
                   <div className="grid gap-6 md:gap-8 content-center">
                      <div className="space-y-3 md:space-y-4">
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-black-black">
@@ -68,7 +68,7 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
                         </div>
                      </div>
                   </div>
-                  <div className="w-full h-[300px] sm:h-[400px] md:h-[600px] md:w-[40vw] xl:w-[35vw] 2xl:w-[454px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
+                  <div className="w-full h-[300px] sm:h-[400px] lg:h-[600px] lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
                      <Image
                         src="https://res.cloudinary.com/dnqiosdb6/image/upload/v1730938018/Floresta_60-min_y9t5hj.jpg"
                         alt="Floresta hero"
