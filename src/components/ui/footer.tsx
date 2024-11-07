@@ -9,7 +9,7 @@ export const Footer: React.FC<FooterProps> = ({
 }: FooterProps) => {
    return (
       <React.Fragment>
-         <div className="bg-white-default flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-6 md:py-0 gap-6 md:gap-0">
+         <div className="bg-white-default flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-8 md:py-0 gap-8 md:gap-0">
             <img
                loading="lazy"
                src="/footer-logo.png"
