@@ -1,6 +1,6 @@
 import { DictionaryProps } from '@/src/types/dictionary'
-import Image from 'next/image'
 
+import Image from 'next/image'
 import React from 'react'
 
 export const AboutBASA: React.FC<DictionaryProps> = ({
