@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                      src="/logo-header.png"
                      alt="logo-header"
                      loading="lazy"
-                     className="object-contain"
+                     className="object-contain w-[197px] h-[28px]"
                   />
                </Link>
                <div className="grid items-center gap-12">
