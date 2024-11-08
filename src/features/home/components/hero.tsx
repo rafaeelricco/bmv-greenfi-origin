@@ -14,7 +14,6 @@ import { DictionaryProps } from '@/src/types/dictionary'
 import { ArrowRight, Info, Wallet } from 'lucide-react'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
@@ -110,17 +109,17 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            src="/floresta-hero.jpg"
                            alt="Floresta hero"
                            fill
-                           className="object-cover object-center"
+                           className="object-cover object-center select-none"
                            priority
                            quality={50}
                         />
-                        <div className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-xl hover:bg-white-default/80 transition-colors cursor-pointer">
-                           <Link
-                              href={'#'}
-                              className="bg-green-default rounded-md w-6 h-6 flex items-center justify-center p-1"
-                           >
+                        <div
+                           className="absolute bottom-4 left-4 bg-white-default px-2 py-2 flex items-center gap-2 rounded-xl hover:bg-white-default/80 transition-colors cursor-pointer select-none"
+                           onClick={() => handleScrollTo('#why-buy-ucs')}
+                        >
+                           <button className="bg-green-default rounded-md w-6 h-6 flex items-center justify-center p-1">
                               <Info className="text-yellow-default" />
-                           </Link>
+                           </button>
                            <p className="text-sm font-semibold text-black-text">
                               {dictionary.hero.info.question}
                            </p>
