@@ -8,7 +8,7 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
 }: DictionaryProps) => {
    return (
       <React.Fragment>
-         <div className="bg-green-default p-4 md:p-6">
+         <div className="bg-green-default p-4 md:p-6" id="bank-of-amazonia">
             <div className="container bg-[#FBEFD5] rounded-3xl px-6 md:px-20 py-8 md:py-16 grid gap-6 md:gap-8">
                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-20">
                   <div className="grid gap-6 md:gap-8 content-center">

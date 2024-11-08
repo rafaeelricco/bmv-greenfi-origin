@@ -65,7 +65,7 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
    }
    return (
       <React.Fragment>
-         <div className="relative overflow-hidden">
+         <div className="relative overflow-hidden" id="sustainability">
             <div className="py-20">
                <div className="container">
                   <h2 className="text-3xl md:text-center md:text-5xl font-semibold text-black-black text-balance">

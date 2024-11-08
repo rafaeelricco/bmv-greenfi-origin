@@ -36,31 +36,50 @@ import Link from 'next/link'
 import React from 'react'
 
 const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) => {
+   const handleScrollTo = (scrollTo: string) => {
+      const element = document.querySelector(scrollTo)
+      if (element) {
+         element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+   }
+
    const items = [
       {
          id: 1,
-         label: dictionary.header.navigation.home.label,
-         tooltip: dictionary.header.navigation.home.tooltip,
+         label: 'Início',
+         tooltip: 'Página inicial.',
          disabled: false,
-         scrollTo: '#',
-         link: general_routes.home,
+         scrollTo: '#hero',
+         link: '/',
          external: false
       },
       {
          id: 2,
-         label: dictionary.header.navigation.about.label,
-         tooltip: dictionary.header.navigation.about.tooltip,
+         label: 'Por que adquirir UCS?',
+         tooltip:
+            'Descubra como cada UCS gera impacto real na preservação ambiental e no futuro sustentável.',
          disabled: false,
-         scrollTo: '#',
+         scrollTo: '#why-buy-ucs',
          link: '/',
          external: false
       },
       {
          id: 3,
-         label: dictionary.header.navigation.sustainability.label,
-         tooltip: dictionary.header.navigation.sustainability.tooltip,
+         label: 'Sustentabilidade',
+         tooltip:
+            'Conheça como transformamos sustentabilidade em proteção da Amazônia.',
          disabled: false,
-         scrollTo: '#',
+         scrollTo: '#sustainability',
+         link: '/',
+         external: false
+      },
+      {
+         id: 4,
+         label: 'Banco da Amazônia',
+         tooltip:
+            'Conheça nossa parceria com o Banco da Amazônia e seu compromisso com o desenvolvimento sustentável.',
+         disabled: false,
+         scrollTo: '#bank-of-amazonia',
          link: '/',
          external: false
       }
@@ -93,26 +112,18 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                                     <TooltipTrigger asChild>
                                        <div>
                                           {item.disabled ? (
-                                             <React.Fragment>
-                                                <p className="font-sf-pro-display text-green-default font-semibold flex-shrink cursor-default opacity-50">
-                                                   {item.label}
-                                                </p>
-                                             </React.Fragment>
+                                             <p className="font-sf-pro-display text-green-default font-semibold flex-shrink cursor-default opacity-50">
+                                                {item.label}
+                                             </p>
                                           ) : (
-                                             <Link
-                                                href={item.link}
+                                             <button
+                                                onClick={() =>
+                                                   handleScrollTo(item.scrollTo)
+                                                }
                                                 className="font-sf-pro-display text-green-default hover:text-green-default/80 flex-shrink cursor-pointer hover:underline font-semibold"
-                                                target={
-                                                   item.external ? '_blank' : '_self'
-                                                }
-                                                rel={
-                                                   item.external
-                                                      ? 'noreferrer'
-                                                      : undefined
-                                                }
                                              >
                                                 {item.label}
-                                             </Link>
+                                             </button>
                                           )}
                                        </div>
                                     </TooltipTrigger>
@@ -166,22 +177,16 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                                                       {item.label}
                                                    </p>
                                                 ) : (
-                                                   <Link
-                                                      href={item.link}
+                                                   <button
+                                                      onClick={() =>
+                                                         handleScrollTo(
+                                                            item.scrollTo
+                                                         )
+                                                      }
                                                       className="font-sf-pro-display text-green-default hover:text-green-default/80 hover:underline font-semibold"
-                                                      target={
-                                                         item.external
-                                                            ? '_blank'
-                                                            : '_self'
-                                                      }
-                                                      rel={
-                                                         item.external
-                                                            ? 'noreferrer'
-                                                            : undefined
-                                                      }
                                                    >
                                                       {item.label}
-                                                   </Link>
+                                                   </button>
                                                 )}
                                              </div>
                                           </TooltipTrigger>
