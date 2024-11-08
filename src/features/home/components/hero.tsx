@@ -12,16 +12,55 @@ import { Button } from '@/src/components/ui/button'
 import { Input } from '@/src/components/ui/input'
 import { DictionaryProps } from '@/src/types/dictionary'
 import { ArrowRight, Info, Wallet } from 'lucide-react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { z } from 'zod'
 
 import Image from 'next/image'
 import React from 'react'
+import { redeemUcsService } from '@/src/services/redeemUcs/redeemUcs.service'
 
 export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
+   const {
+      register,
+      watch,
+      handleSubmit,
+      formState: { errors }
+   } = useForm<redeemUcsProps>({
+      defaultValues: {
+         name: '',
+         email: '',
+         code: '',
+         wallet: ''
+      }
+   })
+
+   const [redeenLoading, setRedeemLoading] = React.useState(false)
+
    const handleScrollTo = (scrollTo: string) => {
       const element = document.querySelector(scrollTo)
       if (element) {
          element.scrollIntoView({ behavior: 'smooth' })
       }
+   }
+
+   const onSubmit: SubmitHandler<redeemUcsProps> = async (data) => {
+      setRedeemLoading(true)
+      const response = await redeemUcsService({
+         ownerEmail: data.email,
+         ownerName: data.name,
+         tokenCode: data.code,
+         toWalletAddress: data.wallet
+      })
+
+      setRedeemLoading(false)
+
+      // TODO: Colocar mensagens de erro e sucesso em ingles ou portugues
+      if (response.status !== 200) {
+         console.error('Error:', response)
+         return
+      }
+
+      console.log('Success:', response)
    }
 
    return (
@@ -44,23 +83,42 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                      </div>
                   </div>
                </DialogTitle>
-               <div className="space-y-4">
-                  <Input type="text" placeholder="Nome" />
-                  <Input type="email" placeholder="E-mail" />
-                  <Input type="text" placeholder="Código de resgate" />
-                  <Input type="text" placeholder="Endereço da wallet" />
-               </div>
-               <div className="grid md:grid-cols-2 gap-4">
-                  <Button variant={'default'} className="w-full" loading={false}>
-                     Resgatar minha UCS
-                  </Button>
-                  <Button variant={'outline'} className="w-full">
-                     <div className="flex items-center gap-2">
-                        <Wallet className="w-4 h-4" />
-                        Conectar wallet
-                     </div>
-                  </Button>
-               </div>
+               <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="space-y-4">
+                     <Input type="text" placeholder="Nome" {...register('name')} />
+                     <Input
+                        type="email"
+                        placeholder="E-mail"
+                        {...register('email')}
+                     />
+                     <Input
+                        type="text"
+                        placeholder="Código de resgate"
+                        {...register('code')}
+                     />
+                     <Input
+                        type="text"
+                        placeholder="Endereço da wallet"
+                        {...register('wallet')}
+                     />
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                     <Button
+                        type="submit"
+                        variant={'default'}
+                        className="w-full"
+                        loading={redeenLoading}
+                     >
+                        Resgatar minha UCS
+                     </Button>
+                     <Button variant={'outline'} className="w-full">
+                        <div className="flex items-center gap-2">
+                           <Wallet className="w-4 h-4" />
+                           Conectar wallet
+                        </div>
+                     </Button>
+                  </div>
+               </form>
             </DialogContent>
             <Background className="absolute left-1/2 -translate-x-1/2 h-[calc(100vh-82px)] opacity-80 w-screen -z-10" />
             <div
@@ -133,3 +191,25 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       </React.Fragment>
    )
 }
+
+// TODO: Colocar mensagens de erro e sucesso em ingles ou portugues
+const redeemUcsSchema = z.object({
+   name: z.string({
+      message: 'Nome é obrigatório'
+   }),
+   email: z
+      .string({
+         message: 'E-mail é obrigatório'
+      })
+      .email({
+         message: 'E-mail inválido'
+      }),
+   code: z.string({
+      message: 'Código de resgate é obrigatório'
+   }),
+   wallet: z.string({
+      message: 'Endereço da wallet é obrigatório'
+   })
+})
+
+type redeemUcsProps = z.infer<typeof redeemUcsSchema>

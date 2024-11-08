@@ -1,6 +1,6 @@
 export type RedeemUcsDTO = {
-  name: string
-  email: string
+  ownerName: string
+  ownerEmail: string
   tokenCode: string
-  walletAddress: string
+  toWalletAddress: string
 }
