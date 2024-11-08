@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
    const handleScrollTo = (scrollTo: string) => {
       const element = document.querySelector(scrollTo)
       if (element) {
-         element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+         element.scrollIntoView({ behavior: 'smooth' })
       }
    }
 

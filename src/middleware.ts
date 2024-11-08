@@ -19,7 +19,7 @@ export function middleware(request: NextRequest) {
     */
    if (
       pathname.startsWith('/public/') ||
-      pathname.match(/\.(jpg|jpeg|png|gif|ico|svg)$/)
+      pathname.match(/\.(jpg|jpeg|png|gif|ico|svg|mp4)$/)
    ) {
       return NextResponse.next()
    }

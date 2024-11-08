@@ -1,5 +1,8 @@
 import { DictionaryProps } from '@/src/types/dictionary'
+import { usePathname } from 'next/navigation'
 
+import { cn } from '@/lib/utils'
+import { CirclePlay } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -70,7 +73,7 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
                   </div>
                   <div className="w-full h-[300px] sm:h-[400px] lg:h-[600px] lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
                      <Image
-                        src="https://res.cloudinary.com/dnqiosdb6/image/upload/v1730938018/Floresta_60-min_y9t5hj.jpg"
+                        src="/basa-image.png"
                         alt="Floresta hero"
                         fill
                         className="object-cover object-center"
@@ -78,6 +81,14 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
                         quality={50}
                      />
                   </div>
+               </div>
+            </div>
+            <div className="py-16 space-y-8">
+               <h3 className="text-lg font-semibold text-white-default text-center">
+                  Protegendo o futuro da floresta
+               </h3>
+               <div className="max-w-xl min-h-72 rounded-2xl mx-auto my-0">
+                  <VideoPlayer dictionary={{ dictionary }} />
                </div>
             </div>
          </div>
@@ -111,6 +122,95 @@ const CheckIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
             strokeLinejoin="round"
          />
       </svg>
+   )
+}
+
+const VideoPlayer: React.FC<{ dictionary: DictionaryProps; thumbnail?: string }> = ({
+   dictionary,
+   thumbnail
+}) => {
+   const videoRef = React.useRef<HTMLVideoElement>(null)
+   const pathname = usePathname()
+   const [isFullscreen, setIsFullscreen] = React.useState(false)
+
+   const currentLocale = pathname.split('/')[1] as 'pt' | 'en'
+   const videoUrl =
+      currentLocale === 'en'
+         ? process.env.NEXT_PUBLIC_VIDEO_EN
+         : process.env.NEXT_PUBLIC_VIDEO_PT
+
+   React.useEffect(() => {
+      const handleFullscreenChange = () => {
+         const isInFullscreen = Boolean(document.fullscreenElement)
+         setIsFullscreen(isInFullscreen)
+
+         if (!isInFullscreen && videoRef.current) {
+            videoRef.current.pause()
+         }
+      }
+
+      document.addEventListener('fullscreenchange', handleFullscreenChange)
+      document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+      document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+      document.addEventListener('MSFullscreenChange', handleFullscreenChange)
+
+      const handleKeyPress = (e: KeyboardEvent) => {
+         if (e.key === 'Escape' && videoRef.current) {
+            videoRef.current.pause()
+            setIsFullscreen(false)
+         }
+      }
+      document.addEventListener('keydown', handleKeyPress)
+
+      return () => {
+         document.removeEventListener('fullscreenchange', handleFullscreenChange)
+         document.removeEventListener(
+            'webkitfullscreenchange',
+            handleFullscreenChange
+         )
+         document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
+         document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
+         document.removeEventListener('keydown', handleKeyPress)
+      }
+   }, [])
+
+   const handlePlay = () => {
+      if (videoRef.current) {
+         if (videoRef.current.requestFullscreen) {
+            videoRef.current.requestFullscreen()
+         }
+         videoRef.current.play()
+         setIsFullscreen(true)
+      }
+   }
+
+   return (
+      <div className="relative w-full h-full rounded-2xl overflow-hidden">
+         <video
+            ref={videoRef}
+            className={cn(
+               'w-full h-full object-cover rounded-2xl cursor-pointer',
+               !isFullscreen && 'blur-[2px] brightness-[0.5]'
+            )}
+            onClick={handlePlay}
+            poster={thumbnail}
+            preload="metadata"
+         >
+            <source src={videoUrl} type="video/mp4" />
+            {currentLocale === 'en'
+               ? "Your browser doesn't support video playback."
+               : 'Seu navegador não suporta a tag de vídeo.'}
+         </video>
+         {!isFullscreen && (
+            <button
+               onClick={handlePlay}
+               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-4 transition-all"
+               aria-label="Play video"
+            >
+               <CirclePlay className="w-12 h-12 text-white-default" />
+            </button>
+         )}
+      </div>
    )
 }
 

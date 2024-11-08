@@ -16,7 +16,7 @@ import React from 'react'
 export const TransformingSustainability: React.FC<DictionaryProps> = ({
    dictionary
 }: DictionaryProps) => {
-   const cardItems: CardItemProps[] = [
+   const cardItems = [
       {
          icon: <ThreePlants className="size-5" />,
          title: 'Preservação da natureza',
@@ -82,7 +82,7 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
    )
 }
 
-export interface CardItemProps {
+export type CardItemProps = {
    icon: React.ReactNode
    title: string
    description: string

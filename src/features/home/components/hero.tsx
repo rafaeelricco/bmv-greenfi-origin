@@ -69,13 +69,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
             >
                <div className="flex-1 flex items-center container px-4 md:px-0">
                   <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center w-full">
-                     <div className="flex flex-col gap-4 mt-8 sm:mt-0">
-                        <div className="flex items-center gap-2">
-                           <span className="w-2 h-2 rounded-full bg-[#099817] inline-flex animate-green" />
-                           <p className="text-sm font-semibold text-black-text">
-                              {dictionary.hero.status.active}
-                           </p>
-                        </div>
+                     <div className="flex flex-col gap-6 mt-8 sm:mt-0">
                         <div className="flex flex-col gap-2">
                            <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight">
                               {dictionary.hero.title.first}
@@ -89,7 +83,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                               {dictionary.hero.description}
                            </p>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-6">
                            <DialogTrigger asChild>
                               <Button variant="default" className="w-full sm:w-auto">
                                  {dictionary.hero.buttons.primary}
@@ -98,10 +92,16 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            <Button
                               variant="outline"
                               className="w-full sm:w-auto"
-                              onClick={() => handleScrollTo('#why-buy-ucs')}
+                              onClick={() => handleScrollTo('#what-guides-us')}
                            >
                               {dictionary.hero.buttons.secondary}
                            </Button>
+                        </div>
+                        <div className="flex items-center gap-2">
+                           <span className="w-2 h-2 rounded-full bg-[#099817] inline-flex animate-green" />
+                           <p className="text-sm font-semibold text-black-text">
+                              {dictionary.hero.status.active}
+                           </p>
                         </div>
                      </div>
                      <div className="w-full lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] h-[400px] md:h-[600px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
