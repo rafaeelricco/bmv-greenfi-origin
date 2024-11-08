@@ -18,6 +18,13 @@ import Link from 'next/link'
 import React from 'react'
 
 export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
+   const handleScrollTo = (scrollTo: string) => {
+      const element = document.querySelector(scrollTo)
+      if (element) {
+         element.scrollIntoView({ behavior: 'smooth' })
+      }
+   }
+
    return (
       <React.Fragment>
          <Dialog>
@@ -89,7 +96,11 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                                  {dictionary.hero.buttons.primary}
                               </Button>
                            </DialogTrigger>
-                           <Button variant="outline" className="w-full sm:w-auto">
+                           <Button
+                              variant="outline"
+                              className="w-full sm:w-auto"
+                              onClick={() => handleScrollTo('#why-buy-ucs')}
+                           >
                               {dictionary.hero.buttons.secondary}
                            </Button>
                         </div>
