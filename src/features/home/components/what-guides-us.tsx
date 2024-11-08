@@ -17,17 +17,17 @@ export const WhatGuidesUs: React.FC<DictionaryProps> = ({
                <CardWhatGuidesUs
                   title="Missão"
                   description="Desenvolvendo uma Amazônia Sustentável com crédito e soluções eficazes"
-                  icon={<MissionIcon />}
+                  icon={<MissionIcon className="w-10 h-10" />}
                />
                <CardWhatGuidesUs
                   title="Valores"
                   description={<AcronymEN className="min-w-[308px] min-h-[186px]" />}
-                  icon={<ValuesIcon />}
+                  icon={<ValuesIcon className="w-10 h-10" />}
                />
                <CardWhatGuidesUs
                   title="Visão"
                   description="Ser o principal banco de desenvolvimento na Amazônia, inovador com colaboradores e resultados sólidos"
-                  icon={<VisionIcon />}
+                  icon={<VisionIcon className="w-10 h-10" />}
                />
             </div>
          </div>
@@ -43,9 +43,7 @@ export const CardWhatGuidesUs: React.FC<{
    return (
       <React.Fragment>
          <div className="bg-green-default px-6 py-12 w-fit rounded-3xl grid place-items-center gap-4 justify-items-center content-center max-w-[356px]">
-            <div className="size-10 bg-transparent rounded-lg flex items-center justify-center">
-               {icon}
-            </div>
+            {icon}
             <div className="flex flex-col items-center gap-2">
                <h3 className="text-lg text-center md:text-xl font-semibold text-white-default">
                   {title}
@@ -105,7 +103,6 @@ function VisionIcon(props: React.SVGProps<SVGSVGElement>) {
          xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 83 62"
          fill="none"
-         strokeWidth={2}
          {...props}
       >
          <path
