@@ -2,15 +2,15 @@
 
 import { AboutBASA } from '@/features/home/components/about-basa'
 import { Hero } from '@/features/home/components/hero'
+import { Pertners } from '@/features/home/components/pertners'
 import { Statistics } from '@/features/home/components/statistics'
 import { TransformingSustainability } from '@/features/home/components/transforming-sustainability/transforming-sustainability'
 import { WhyBuyUcs } from '@/features/home/components/why-buy-ucs'
+import { Footer } from '@/src/components/ui/footer'
 import { Header } from '@/src/components/ui/header'
 import { DictionaryProps } from '@/src/types/dictionary'
 
-import { Footer } from '@/src/components/ui/footer'
 import React from 'react'
-import { Pertners } from './components/pertners'
 
 export const HomePageComponent: React.FC<DictionaryProps> = ({
    dictionary

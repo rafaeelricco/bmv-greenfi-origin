@@ -16,7 +16,6 @@ import React from 'react'
 export const TransformingSustainability: React.FC<DictionaryProps> = ({
    dictionary
 }: DictionaryProps) => {
-   console.log(dictionary)
    const cardItems: CardItemProps[] = [
       {
          icon: <ThreePlants className="size-5" />,

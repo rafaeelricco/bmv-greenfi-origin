@@ -1,4 +1,5 @@
 import { DictionaryProps } from '@/src/types/dictionary'
+
 import React from 'react'
 
 export const Statistics: React.FC<DictionaryProps> = ({
