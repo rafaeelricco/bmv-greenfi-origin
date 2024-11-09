@@ -91,7 +91,12 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
 
    return (
       <React.Fragment>
-         <Dialog onOpenChange={() => form.reset()}>
+         <Dialog
+            onOpenChange={async () => {
+               form.reset()
+               await handleLogout()
+            }}
+         >
             <DialogContent className="space-y-2">
                <DialogTitle>
                   <div className="space-y-2">
@@ -181,7 +186,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            type="button"
                            variant={'outline'}
                            className="w-full"
-                           onClick={async () => handleConnectWallet()}
+                           onClick={async () => await handleConnectWallet()}
                            loading={isLoading.connectWallet}
                         >
                            <div className="flex items-center gap-2">

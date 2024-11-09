@@ -62,7 +62,6 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
 
    const getGoogleWallet = async (): Promise<string | undefined> => {
       if (!web3auth) {
-         //  toast.error('Web3Auth not initialized yet')
          console.error('Web3Auth not initialized yet')
          return undefined
       }
@@ -83,10 +82,14 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
             throw new Error('Failed to get wallet address')
          }
 
+         await web3auth.logout()
+
+         localStorage.removeItem('openlogin_store')
+         sessionStorage.removeItem('openlogin_store')
+
          return accounts[0]
       } catch (error) {
          console.error('Google wallet generation error:', error)
-         //  toast.error('Failed to generate wallet')
          console.error('Failed to generate wallet')
          return undefined
       }
