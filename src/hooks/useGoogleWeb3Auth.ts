@@ -35,6 +35,7 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
             const openloginAdapter = new OpenloginAdapter({
                adapterSettings: {
                   uxMode: 'popup',
+                  storageKey: 'session',
                   loginConfig: {
                      google: {
                         verifier: process.env.WEB3AUTH_VERIFIER || 'your_verifier',

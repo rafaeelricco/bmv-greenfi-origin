@@ -1,6 +1,7 @@
 import '../styles/embla.css'
 import '../styles/globals.css'
 
+import { Toaster } from '@/components/ui/sonner'
 import { i18n } from '@/i18n-config'
 import type { Metadata } from 'next'
 
@@ -84,7 +85,10 @@ export default async function Root({ children, params }: RootLayoutProps) {
                rel="stylesheet"
             />
          </head>
-         <body id="root">{children}</body>
+         <body id="root">
+            <Toaster />
+            {children}
+         </body>
       </html>
    )
 }
