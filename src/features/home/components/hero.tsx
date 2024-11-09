@@ -26,7 +26,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import i18next from 'i18next'
+import i18next from '@/lib/zod-i18n-setup'
 import Image from 'next/image'
 import React from 'react'
 
@@ -272,33 +272,26 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    )
 }
 
-// TODO: Colocar mensagens de erro e sucesso em ingles ou portugues
-
 export const redeemUcsSchema = z.object({
-   name: z.string().nonempty({
-      message: i18next.t('validations.required', {
-         field: i18next.t('validations.fields.name')
+   name: z
+      .string({
+         message: i18next.t('validations:username')
       })
-   }),
+      .min(1, {
+         message: i18next.t('validations:username')
+      }),
    email: z
-      .string()
-      .nonempty({
-         message: i18next.t('validations.required', {
-            field: i18next.t('validations.fields.email')
-         })
+      .string({
+         required_error: i18next.t('validations:default')
       })
       .email({
-         message: i18next.t('validations.email')
+         message: i18next.t('validations:email')
       }),
-   code: z.string().nonempty({
-      message: i18next.t('validations.required', {
-         field: i18next.t('validations.fields.code')
-      })
+   code: z.string({
+      required_error: i18next.t('validations:redeem')
    }),
-   wallet: z.string().nonempty({
-      message: i18next.t('validations.required', {
-         field: i18next.t('validations.fields.wallet')
-      })
+   wallet: z.string({
+      required_error: i18next.t('validations:wallet')
    })
 })
 

@@ -78,8 +78,11 @@
       }
    },
    "validations": {
-      "required": "{{field}} is required",
+      "username": "Name must have at least 3 characters",
+      "redeem": "Invalid redemption code",
+      "wallet": "Invalid wallet address",
       "email": "Invalid email",
+      "default": "Invalid field",
       "fields": {
          "name": "Name",
          "email": "Email",

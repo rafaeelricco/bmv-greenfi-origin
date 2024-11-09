@@ -28,7 +28,7 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
 
             const web3auth = new Web3AuthNoModal({
                clientId: process.env.WEB3AUTH_CLIENT_ID || 'your_client_id',
-               web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_MAINNET,
+               web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_DEVNET,
                privateKeyProvider
             })
 

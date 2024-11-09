@@ -78,8 +78,11 @@
       }
    },
    "validations": {
-      "required": "{{field}} é obrigatório",
+      "username": "Nome deve ter no mínimo 3 caracteres",
+      "redeem": "Código de resgate inválido",
+      "wallet": "Endereço da wallet inválido",
       "email": "E-mail inválido",
+      "default": "Campo inválido",
       "fields": {
          "name": "Nome",
          "email": "E-mail",
