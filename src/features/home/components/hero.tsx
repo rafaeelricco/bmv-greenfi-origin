@@ -15,6 +15,7 @@ import { ArrowRight, Info, Wallet } from 'lucide-react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { useGoogleWeb3Auth } from '@/src/hooks/useGoogleWeb3Auth'
 import Image from 'next/image'
 import React from 'react'
 
@@ -22,6 +23,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    const {
       register,
       watch,
+      setValue,
       handleSubmit,
       formState: { errors }
    } = useForm<redeemUcsProps>({
@@ -60,6 +62,25 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       }
 
       console.log('Success:', response)
+   }
+
+   const { getGoogleWallet } = useGoogleWeb3Auth()
+   const [isLoading, setIsLoading] = React.useState(false)
+   const [walletAddress, setWalletAddress] = React.useState<string>()
+   console.log('walletAddress', walletAddress)
+
+   const handleConnectWallet = async () => {
+      setIsLoading(true)
+      try {
+         const address = await getGoogleWallet()
+         if (address) {
+            setValue('wallet', address)
+         }
+      } catch (error) {
+         console.error('Erro ao conectar wallet:', error)
+      } finally {
+         setIsLoading(false)
+      }
    }
 
    return (
@@ -107,7 +128,12 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                      >
                         Resgatar minha UCS
                      </Button>
-                     <Button variant={'outline'} className="w-full">
+                     <Button
+                        type="button"
+                        variant={'outline'}
+                        className="w-full"
+                        onClick={() => handleConnectWallet()}
+                     >
                         <div className="flex items-center gap-2">
                            <Wallet className="w-4 h-4" />
                            Conectar wallet
