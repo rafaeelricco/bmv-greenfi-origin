@@ -26,6 +26,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
+import i18next from 'i18next'
 import Image from 'next/image'
 import React from 'react'
 
@@ -67,11 +68,11 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       setIsLoading({ ...isLoading, redeem: false })
 
       if (response.status !== 200) {
-         toast.error('Erro ao resgatar UCS. Tente novamente mais tarde.')
+         toast.error(i18next.t('messages.error.redeem'))
          return
       }
 
-      toast.success('UCS resgatada com sucesso!')
+      toast.success(i18next.t('messages.success.redeem'))
    }
 
    const handleConnectWallet = async () => {
@@ -82,7 +83,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
             form.setValue('wallet', address)
          }
       } catch (error) {
-         toast.error('Erro ao conectar wallet. Tente novamente mais tarde.')
+         toast.error(i18next.t('messages.error.wallet'))
       } finally {
          setIsLoading({ ...isLoading, connectWallet: false })
       }
@@ -272,14 +273,33 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
 }
 
 // TODO: Colocar mensagens de erro e sucesso em ingles ou portugues
-const redeemUcsSchema = z.object({
-   name: z.string().min(1, { message: 'Nome é obrigatório' }),
+
+export const redeemUcsSchema = z.object({
+   name: z.string().nonempty({
+      message: i18next.t('validations.required', {
+         field: i18next.t('validations.fields.name')
+      })
+   }),
    email: z
       .string()
-      .min(1, { message: 'E-mail é obrigatório' })
-      .email({ message: 'E-mail inválido' }),
-   code: z.string().min(1, { message: 'Código de resgate é obrigatório' }),
-   wallet: z.string().min(1, { message: 'Endereço da wallet é obrigatório' })
+      .nonempty({
+         message: i18next.t('validations.required', {
+            field: i18next.t('validations.fields.email')
+         })
+      })
+      .email({
+         message: i18next.t('validations.email')
+      }),
+   code: z.string().nonempty({
+      message: i18next.t('validations.required', {
+         field: i18next.t('validations.fields.code')
+      })
+   }),
+   wallet: z.string().nonempty({
+      message: i18next.t('validations.required', {
+         field: i18next.t('validations.fields.wallet')
+      })
+   })
 })
 
-type redeemUcsProps = z.infer<typeof redeemUcsSchema>
+export type RedeemUcsProps = z.infer<typeof redeemUcsSchema>

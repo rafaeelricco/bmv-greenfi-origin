@@ -76,5 +76,24 @@
             "description": "Junte-se a uma rede global de defensores da sustentabilidade."
          }
       }
+   },
+   "validations": {
+      "required": "{{field}} é obrigatório",
+      "email": "E-mail inválido",
+      "fields": {
+         "name": "Nome",
+         "email": "E-mail",
+         "code": "Código de resgate",
+         "wallet": "Endereço da wallet"
+      }
+   },
+   "messages": {
+      "error": {
+         "redeem": "Erro ao resgatar UCS. Tente novamente mais tarde.",
+         "wallet": "Erro ao conectar wallet. Tente novamente mais tarde."
+      },
+      "success": {
+         "redeem": "UCS resgatada com sucesso!"
+      }
    }
 }

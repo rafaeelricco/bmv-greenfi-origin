@@ -76,5 +76,24 @@
             "description": "Join a global network of sustainability advocates."
          }
       }
+   },
+   "validations": {
+      "required": "{{field}} is required",
+      "email": "Invalid email",
+      "fields": {
+         "name": "Name",
+         "email": "Email",
+         "code": "Redemption code",
+         "wallet": "Wallet address"
+      }
+   },
+   "messages": {
+      "error": {
+         "redeem": "Error redeeming UCS. Please try again later.",
+         "wallet": "Error connecting wallet. Please try again later."
+      },
+      "success": {
+         "redeem": "UCS successfully redeemed!"
+      }
    }
 }
