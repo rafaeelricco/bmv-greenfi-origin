@@ -1,6 +1,7 @@
 'use client'
 
 import { BrazilSVG, UnitedStatesSVG } from '@/components/icons/flags'
+import { LogoBASA } from '@/components/icons/logo'
 import { Button } from '@/components/ui/button'
 import {
    Drawer,
@@ -32,7 +33,6 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import Image from 'next/image'
 import React from 'react'
-import { LogoBASA } from '../icons/logo'
 
 const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) => {
    const handleScrollTo = (scrollTo: string) => {
