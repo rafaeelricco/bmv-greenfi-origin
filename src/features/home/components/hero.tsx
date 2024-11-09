@@ -79,7 +79,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                      </div>
                   </div>
                </DialogTitle>
-               <form onSubmit={handleSubmit(onSubmit)}>
+               <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
                   <div className="space-y-4">
                      <Input type="text" placeholder="Nome" {...register('name')} />
                      <Input
