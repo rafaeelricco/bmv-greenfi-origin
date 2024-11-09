@@ -139,6 +139,35 @@ const VideoPlayer: React.FC<{ dictionary: DictionaryProps; thumbnail?: string }>
          ? process.env.NEXT_PUBLIC_VIDEO_EN
          : process.env.NEXT_PUBLIC_VIDEO_PT
 
+   const captureVideoFrame = () => {
+      if (videoRef.current) {
+         videoRef.current.currentTime = 1
+
+         const canvas = document.createElement('canvas')
+         canvas.width = videoRef.current.videoWidth
+         canvas.height = videoRef.current.videoHeight
+
+         const ctx = canvas.getContext('2d')
+         ctx?.drawImage(videoRef.current, 0, 0)
+
+         const thumbnailUrl = canvas.toDataURL('image/jpeg')
+         return thumbnailUrl
+      }
+   }
+
+   React.useEffect(() => {
+      if (videoRef.current) {
+         videoRef.current.addEventListener('loadeddata', () => {
+            if (!thumbnail) {
+               const frame = captureVideoFrame()
+               if (videoRef.current) {
+                  videoRef.current.poster = frame || ''
+               }
+            }
+         })
+      }
+   }, [thumbnail])
+
    React.useEffect(() => {
       const handleFullscreenChange = () => {
          const isInFullscreen = Boolean(document.fullscreenElement)
