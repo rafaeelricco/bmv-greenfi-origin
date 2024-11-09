@@ -25,15 +25,14 @@ import {
 } from '@/components/ui/tooltip'
 import { i18n } from '@/i18n-config'
 import { cn } from '@/lib/utils'
-import { general_routes } from '@/routes/general'
 import { DictionaryProps } from '@/src/types/dictionary'
 import { setCookie } from 'cookies-next'
 import { PanelLeftIcon } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import { LogoBASA } from '../icons/logo'
 
 const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) => {
    const handleScrollTo = (scrollTo: string) => {
@@ -94,14 +93,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
             )}
          >
             <div className="flex items-center justify-between w-full container px-4 md:px-0">
-               <Link href={general_routes.home}>
-                  <img
-                     src="/logo-header.png"
-                     alt="logo-header"
-                     loading="lazy"
-                     className="object-contain w-[197px] h-[28px]"
-                  />
-               </Link>
+               <LogoBASA className="w-[197px] h-[28px]" />
                <div className="grid items-center gap-12">
                   <div className="hidden grid-flow-col items-center gap-12 md:grid">
                      {items.map((item, index) => (
