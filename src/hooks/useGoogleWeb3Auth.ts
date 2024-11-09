@@ -15,7 +15,7 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
                chainNamespace: CHAIN_NAMESPACES.EIP155,
                chainId: '0x1',
                rpcTarget: 'https://rpc.ankr.com/eth',
-               displayName: 'Ethereum Devnet',
+               displayName: 'Ethereum Mainnet',
                blockExplorerUrl: 'https://etherscan.io/',
                ticker: 'ETH',
                tickerName: 'Ethereum',
@@ -28,7 +28,10 @@ export const useGoogleWeb3Auth = (): UseGoogleWeb3AuthReturn => {
 
             const web3auth = new Web3AuthNoModal({
                clientId: process.env.WEB3AUTH_CLIENT_ID || 'your_client_id',
-               web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_MAINNET,
+               web3AuthNetwork:
+                  process.env.NODE_ENV === 'production'
+                     ? WEB3AUTH_NETWORK.SAPPHIRE_MAINNET
+                     : WEB3AUTH_NETWORK.SAPPHIRE_DEVNET,
                privateKeyProvider
             })
 
