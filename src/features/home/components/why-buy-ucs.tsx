@@ -21,23 +21,23 @@ export const WhyBuyUcs: React.FC<DictionaryProps> = ({
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <WhyBuyUcsItem
                      title={dictionary.whyBuyUcs.items.impact.title}
-                     icon={<HandHoldPlant className="size-6" />}
+                     icon={<HandHoldPlant className="size-6 fill-[#FBEFD5]" />}
                      description={dictionary.whyBuyUcs.items.impact.description}
                   />
                   <WhyBuyUcsItem
                      title={dictionary.whyBuyUcs.items.legacy.title}
                      description={dictionary.whyBuyUcs.items.legacy.description}
-                     icon={<RootLegacy className="size-6" />}
+                     icon={<RootLegacy className="size-6 fill-[#FBEFD5]" />}
                   />
                   <WhyBuyUcsItem
                      title={dictionary.whyBuyUcs.items.recognition.title}
                      description={dictionary.whyBuyUcs.items.recognition.description}
-                     icon={<Trophy className="size-6" />}
+                     icon={<Trophy className="size-6 fill-[#FBEFD5]" />}
                   />
                   <WhyBuyUcsItem
                      title={dictionary.whyBuyUcs.items.community.title}
                      description={dictionary.whyBuyUcs.items.community.description}
-                     icon={<Community className="size-6" />}
+                     icon={<Community className="size-6 fill-[#FBEFD5]" />}
                   />
                </div>
             </div>
