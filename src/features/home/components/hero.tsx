@@ -7,9 +7,9 @@ import {
    DialogTrigger
 } from '@/components/ui/dialog'
 import { Background } from '@/src/components/icons/background'
-import { HandHoldCoin } from '@/src/components/icons/hero'
 import { Button } from '@/src/components/ui/button'
 import { Input } from '@/src/components/ui/input'
+import { redeemUcsService } from '@/src/services/redeemUcs/redeemUcs.service'
 import { DictionaryProps } from '@/src/types/dictionary'
 import { ArrowRight, Info, Wallet } from 'lucide-react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -17,7 +17,6 @@ import { z } from 'zod'
 
 import Image from 'next/image'
 import React from 'react'
-import { redeemUcsService } from '@/src/services/redeemUcs/redeemUcs.service'
 
 export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps) => {
    const {
@@ -69,9 +68,6 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
             <DialogContent className="space-y-2">
                <DialogTitle>
                   <div className="space-y-2">
-                     <div className="p-1 w-fit bg-green-default rounded-lg flex items-center justify-center">
-                        <HandHoldCoin className="size-6" />
-                     </div>
                      <div className="space-y-1">
                         <h1 className="text-xl font-raleway text-green-default font-semibold">
                            Sua UCS exclusiva está ativada!

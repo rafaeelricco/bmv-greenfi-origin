@@ -33,12 +33,13 @@ const config: Config = {
             foreground: 'var(--foreground)',
 
             gradient: {
-               start: '#3a452d',
-               end: '#ecae2f'
+               start: '#349352',
+               end: '#F0C53F'
             },
 
             gray: {
                default: '#394054',
+               support: '#DFDDDD',
                paragraph: 'rgba(100, 106, 105, 1)',
                border: '#D9DEDD',
                alto: 'rgba(219, 219, 219, 1)',
@@ -56,7 +57,7 @@ const config: Config = {
             },
 
             green: {
-               default: '#3a452d',
+               default: '#349352',
                deYork: 'rgba(152, 202, 137, 1)',
                emerald: 'rgba(97, 206, 112, 1)',
                kelp: 'rgba(58, 67, 46, 1)',
@@ -65,7 +66,7 @@ const config: Config = {
             },
 
             yellow: {
-               default: '#ecae2f',
+               default: '#F0C53F',
                fuelYellow: 'rgba(236, 174, 47, 1)',
                luxorGold: 'rgba(167, 137, 44, 1)',
                selectiveYellow: 'rgba(239, 177, 0, 1)'

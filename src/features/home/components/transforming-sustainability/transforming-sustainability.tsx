@@ -99,7 +99,7 @@ export const CardItem: React.FC<CardItemProps> = ({ icon, title, description }) 
                <h3 className="text-lg text-center md:text-xl font-semibold text-white-default">
                   {title}
                </h3>
-               <p className="text-sm md:text-base font-medium text-center text-[#939393]">
+               <p className="text-sm md:text-base font-medium text-center text-gray-support">
                   {description}
                </p>
             </div>
