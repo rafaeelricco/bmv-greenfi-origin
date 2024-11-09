@@ -16,10 +16,9 @@ const nextConfig: NextConfig = {
    },
    env: {
       API_TOKEN: process.env.API_TOKEN,
-      WEB3AUTH_CLIENT_ID: process.env.WEB3AUTH_CLIENT_ID,
-      WEB3AUTH_CLIENT_ID_TEST: process.env.WEB3AUTH_CLIENT_ID_TEST,
+      WEB3AUTH_VERIFIER: process.env.WEB3AUTH_VERIFIER,
       GOOGLE_ID: process.env.GOOGLE_ID,
-      WEB3AUTH_VERIFIER: process.env.WEB3AUTH_VERIFIER
+      WEB3AUTH_CLIENT_ID: process.env.WEB3AUTH_CLIENT_ID
    }
 }
 
