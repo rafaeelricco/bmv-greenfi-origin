@@ -241,7 +241,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            </p>
                         </div>
                      </div>
-                     <div className="w-full lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] h-[400px] md:h-[600px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
+                     <div className="w-full lg:w-[40vw] xl:w-[35vw] 2xl:w-[454px] h-[400px] md:h-[500px] 2xl:h-[600px] bg-green-default rounded-3xl relative overflow-hidden">
                         <Image
                            src="/floresta-hero.jpg"
                            alt="Floresta hero"
