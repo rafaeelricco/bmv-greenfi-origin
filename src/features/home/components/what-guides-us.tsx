@@ -10,7 +10,7 @@ export const WhatGuidesUs: React.FC<DictionaryProps> = ({
          <div className="py-16 space-y-8 bg-transparent" id="what-guides-us">
             <div className="space-y-3 md:space-y-4">
                <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-black-black text-center">
-                  Descubra oque nos guia
+                  Descubra o que nos guia
                </h2>
             </div>
             <div className="flex flex-wrap justify-center gap-8 container mx-auto px-4">

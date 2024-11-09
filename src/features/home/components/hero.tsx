@@ -149,7 +149,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                               <FormControl>
                                  <Input
                                     type="text"
-                                    placeholder="Código de resgate"
+                                    placeholder="Código da moeda"
                                     {...field}
                                  />
                               </FormControl>
