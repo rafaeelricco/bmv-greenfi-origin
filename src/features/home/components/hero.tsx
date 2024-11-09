@@ -91,7 +91,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
 
    return (
       <React.Fragment>
-         <Dialog>
+         <Dialog onOpenChange={() => form.reset()}>
             <DialogContent className="space-y-2">
                <DialogTitle>
                   <div className="space-y-2">
@@ -273,13 +273,9 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
 }
 
 export const redeemUcsSchema = z.object({
-   name: z
-      .string({
-         message: i18next.t('validations:username')
-      })
-      .min(1, {
-         message: i18next.t('validations:username')
-      }),
+   name: z.string().min(3, {
+      message: i18next.t('validations:username')
+   }),
    email: z
       .string({
          required_error: i18next.t('validations:default')
@@ -287,11 +283,11 @@ export const redeemUcsSchema = z.object({
       .email({
          message: i18next.t('validations:email')
       }),
-   code: z.string({
-      required_error: i18next.t('validations:redeem')
+   code: z.string().min(1, {
+      message: i18next.t('validations:redeem')
    }),
-   wallet: z.string({
-      required_error: i18next.t('validations:wallet')
+   wallet: z.string().min(1, {
+      message: i18next.t('validations:wallet')
    })
 })
 
