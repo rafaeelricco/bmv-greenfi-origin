@@ -21,25 +21,25 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
          icon: <ThreePlants className="size-5" />,
          title: 'Preservação da natureza',
          description:
-            'Protegemos [1.000.000] hectares a de floresta, conservando espécies de flora e fauna evitando [Número] toneladas de CO₂ através da manutenção de reservatórios de carbono.'
+            'Protegemos 1.757 m² de floresta, conservando espécies de flora e fauna evitando 250 toneladas de CO₂ através da manutenção de reservatórios de carbono.'
       },
       {
          icon: <WaterParticles className="size-5" />,
          title: 'Recursos hídricos',
          description:
-            'Preservamos [Número] litros de água por ano por hectare, recuperando nascentes e melhorando a qualidade da água local.'
+            'Preservarmos 5.772 litros de água por ano por hectares, recuperando nascentes e melhorando a qualidade da água local.'
       },
       {
          icon: <PlantSheets className="size-5" />,
          title: 'Biodiversidade',
          description:
-            'Estabelecemos corredores ecológicos, protegemos [Número] espécies e aumentamos a população de polinizadores.'
+            'Estabelecemos corredores ecológicos, protegemos 13.229 espécies e aumentamos a população de polinizadores.'
       },
       {
          icon: <People className="size-5" />,
          title: 'Impacto social',
          description:
-            'Criamos empregos sustentáveis, beneficiamos diretamente [Número] famílias e implementamos projetos de educação ambiental.'
+            'Criamos empregos sustentáveis, beneficiamos diretamente 250 famílias e implementamos projetos de educação ambiental.'
       },
       {
          icon: <House className="size-5" />,
@@ -49,9 +49,9 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
       },
       {
          icon: <Wheat className="size-5" />,
-         title: 'Agricultura custentável',
+         title: 'Agricultura sustentável',
          description:
-            'Convertidos [Número] hectares para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos.'
+            'Convertidos 878 m² para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos.'
       }
    ]
 
