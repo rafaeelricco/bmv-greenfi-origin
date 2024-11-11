@@ -116,5 +116,21 @@
       "success": {
          "redeem": "UCS resgatada com sucesso!"
       }
+   },
+   "whatGuidesUs": {
+      "title": "Descubra o que nos guia",
+      "items": {
+         "mission": {
+            "title": "Missão",
+            "description": "Desenvolvendo uma Amazônia Sustentável com crédito e soluções eficazes"
+         },
+         "values": {
+            "title": "Valores"
+         },
+         "vision": {
+            "title": "Visão",
+            "description": "Ser o principal banco de desenvolvimento na Amazônia, inovador com colaboradores e resultados sólidos"
+         }
+      }
    }
 }

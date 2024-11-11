@@ -19,7 +19,6 @@ export const HomePageComponent: React.FC<DictionaryProps> = ({
          <Header dictionary={dictionary} />
          <Hero dictionary={dictionary} />
          <WhatGuidesUs dictionary={dictionary} />
-         {/* <Statistics dictionary={dictionary} /> */}
          <AboutBASA dictionary={dictionary} />
          <TransformingSustainability dictionary={dictionary} />
          <WhyBuyUcs dictionary={dictionary} />

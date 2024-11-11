@@ -104,5 +104,21 @@
       "success": {
          "redeem": "UCS successfully redeemed!"
       }
+   },
+   "whatGuidesUs": {
+      "title": "Discover what guides us",
+      "items": {
+         "mission": {
+            "title": "Mission",
+            "description": "Developing a Sustainable Amazon with credit and effective solutions"
+         },
+         "values": {
+            "title": "Values"
+         },
+         "vision": {
+            "title": "Vision",
+            "description": "To be the main development bank in the Amazon, innovative with solid employees and results"
+         }
+      }
    }
 }
