@@ -132,5 +132,21 @@
             "description": "Ser o principal banco de desenvolvimento na Amazônia, inovador com colaboradores e resultados sólidos"
          }
       }
+   },
+   "aboutBasa": {
+      "title": "Sobre o Banco da Amazônia",
+      "description": "O Banco da Amazônia é uma instituição financeira comprometida com o desenvolvimento sustentável da Amazônia, promovendo o crédito verde e impulsionando a agricultura familiar. Sua missão é oferecer soluções financeiras inovadoras que preservem a biodiversidade e incentivem o uso responsável dos recursos naturais, pautando-se em ética, transparência e inovação.",
+      "subtitle": "Disrupção na sustentabilidade",
+      "items": {
+         "item1": "Compromisso socioambiental forte, com foco em apoiar projetos sustentáveis;",
+         "item2": "Destaque na transformação de ativos ecológicos em benefícios econômicos;",
+         "item3": "Reconhecimento pelo selo Tesouro Verde por três anos consecutivos;",
+         "item4": "Integração entre conservação ambiental e criação de oportunidades financeiras;",
+         "item5": "Alinhamento com a proposta inovadora da moeda UCS."
+      },
+      "video": {
+         "title": "Protegendo o futuro da floresta",
+         "unsupported": "Seu navegador não suporta a tag de vídeo."
+      }
    }
 }

@@ -120,5 +120,21 @@
             "description": "To be the main development bank in the Amazon, innovative with solid employees and results"
          }
       }
+   },
+   "aboutBasa": {
+      "title": "About Bank of Amazonia",
+      "description": "The Bank of Amazonia is a financial institution committed to the sustainable development of the Amazon, promoting green credit and boosting family farming. Its mission is to offer innovative financial solutions that preserve biodiversity and encourage responsible use of natural resources, guided by ethics, transparency, and innovation.",
+      "subtitle": "Disruption in sustainability",
+      "items": {
+         "item1": "Strong social and environmental commitment, focusing on supporting sustainable projects;",
+         "item2": "Excellence in transforming ecological assets into economic benefits;",
+         "item3": "Recognition with the Green Treasury seal for three consecutive years;",
+         "item4": "Integration between environmental conservation and creation of financial opportunities;",
+         "item5": "Alignment with the innovative UCS currency proposal."
+      },
+      "video": {
+         "title": "Protecting the forest's future",
+         "unsupported": "Your browser doesn't support video playback."
+      }
    }
 }
