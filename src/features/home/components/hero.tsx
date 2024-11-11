@@ -73,6 +73,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       }
 
       toast.success(i18next.t('messages.success.redeem'))
+      form.reset()
    }
 
    const handleConnectWallet = async () => {
