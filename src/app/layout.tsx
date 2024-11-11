@@ -7,26 +7,28 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
-   title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
+   title: 'Banco da Amazônia - Compromisso com a Sustentabilidade e o Desenvolvimento Regional',
    description:
-      'Conheça as iniciativas do Banco da Amazônia voltadas para o desenvolvimento sustentável da região amazônica, promovendo práticas socioambientais responsáveis e soluções financeiras eficazes.',
+      'O Banco da Amazônia lidera iniciativas de desenvolvimento sustentável na região amazônica, promovendo práticas socioambientais responsáveis e oferecendo soluções financeiras inovadoras para um futuro melhor.',
    authors: [{ name: 'Banco da Amazônia' }],
    keywords: [
       'Banco da Amazônia',
+      'desenvolvimento regional',
       'sustentabilidade',
-      'desenvolvimento sustentável',
+      'iniciativas sustentáveis',
       'responsabilidade socioambiental',
       'Amazônia',
+      'financiamento verde',
+      'economia sustentável',
+      'projetos socioambientais',
+      'inovação financeira',
       'crédito sustentável',
-      'políticas ambientais',
-      'ESG',
-      'conservação ambiental',
-      'financiamento verde'
+      'biodiversidade'
    ],
    openGraph: {
-      title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
+      title: 'Banco da Amazônia - Compromisso com a Sustentabilidade e o Desenvolvimento Regional',
       description:
-         'Descubra como o Banco da Amazônia promove o desenvolvimento sustentável na região amazônica por meio de práticas socioambientais responsáveis e soluções financeiras eficazes.',
+         'Conheça como o Banco da Amazônia promove o desenvolvimento sustentável na região, unindo conservação ambiental e crescimento econômico por meio de soluções financeiras eficazes.',
       type: 'website',
       url: 'https://www.bancoamazonia.com.br/o-banco/sustentabilidade',
       images: [
@@ -34,23 +36,24 @@ export const metadata: Metadata = {
             url: 'https://www.bancoamazonia.com.br/images/sustentabilidade.jpg',
             width: 1200,
             height: 630,
-            alt: 'Banco da Amazônia - Sustentabilidade'
+            alt: 'Banco da Amazônia - Compromisso com a Sustentabilidade'
          }
       ]
    },
    twitter: {
       card: 'summary_large_image',
-      title: 'Banco da Amazônia | Sustentabilidade e Desenvolvimento Regional',
+      title: 'Banco da Amazônia - Liderando o Desenvolvimento Sustentável na Amazônia',
       description:
-         'Descubra como o Banco da Amazônia promove o desenvolvimento sustentável na região amazônica por meio de práticas socioambientais responsáveis e soluções financeiras eficazes.',
+         'Descubra as ações do Banco da Amazônia que impulsionam a sustentabilidade e o desenvolvimento regional, através de práticas socioambientais responsáveis e inovação financeira.',
       images: [
          {
             url: 'https://www.bancoamazonia.com.br/images/sustentabilidade.jpg',
-            alt: 'Banco da Amazônia - Sustentabilidade'
+            alt: 'Banco da Amazônia - Compromisso com a Sustentabilidade'
          }
       ]
    }
 }
+
 export async function generateStaticParams() {
    return i18n.locales.map((locale) => ({ lang: locale }))
 }

@@ -66,8 +66,8 @@
                "tooltip": "Learn how we transform sustainability into Amazon protection."
             },
             "bankOfAmazonia": {
-               "label": "Bank of Amazonia",
-               "tooltip": "Learn about our partnership with Bank of Amazonia and its commitment to sustainable development."
+               "label": "Banco da Amazonia",
+               "tooltip": "Learn about our partnership with Banco da Amazonia and its commitment to sustainable development."
             }
          }
       },
@@ -136,8 +136,8 @@
       }
    },
    "aboutBasa": {
-      "title": "About Bank of Amazonia",
-      "description": "The Bank of Amazonia is a financial institution committed to the sustainable development of the Amazon, promoting green credit and boosting family farming. Its mission is to offer innovative financial solutions that preserve biodiversity and encourage responsible use of natural resources, guided by ethics, transparency, and innovation.",
+      "title": "About Banco da Amazonia",
+      "description": "The Banco da Amazonia is a financial institution committed to the sustainable development of the Amazon, promoting green credit and boosting family farming. Its mission is to offer innovative financial solutions that preserve biodiversity and encourage responsible use of natural resources, guided by ethics, transparency, and innovation.",
       "subtitle": "Disruption in sustainability",
       "items": {
          "item1": "Strong social and environmental commitment, focusing on supporting sustainable projects;",
