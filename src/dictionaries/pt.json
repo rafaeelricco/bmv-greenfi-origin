@@ -148,5 +148,34 @@
          "title": "Protegendo o futuro da floresta",
          "unsupported": "Seu navegador não suporta a tag de vídeo."
       }
+   },
+   "transformingSustainability": {
+      "title": "Transformando através da sustentabilidade",
+      "cards": {
+         "naturePreservation": {
+            "title": "Preservação da natureza",
+            "description": "Protegemos 1.757 m² de floresta, conservando espécies de flora e fauna evitando 250 toneladas de CO₂ através da manutenção de reservatórios de carbono."
+         },
+         "waterResources": {
+            "title": "Recursos hídricos",
+            "description": "Preservarmos 5.772 litros de água por ano por hectares, recuperando nascentes e melhorando a qualidade da água local."
+         },
+         "biodiversity": {
+            "title": "Biodiversidade",
+            "description": "Estabelecemos corredores ecológicos, protegemos 13.229 espécies e aumentamos a população de polinizadores."
+         },
+         "socialImpact": {
+            "title": "Impacto social",
+            "description": "Criamos empregos sustentáveis, beneficiamos diretamente 250 famílias e implementamos projetos de educação ambiental."
+         },
+         "communityDevelopment": {
+            "title": "Desenvolvimento comunitário",
+            "description": "Apoio a cooperativas locais e aumento da renda média das comunidades envolvidas."
+         },
+         "sustainableAgriculture": {
+            "title": "Agricultura sustentável",
+            "description": "Convertidos 878 m² para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos."
+         }
+      }
    }
 }

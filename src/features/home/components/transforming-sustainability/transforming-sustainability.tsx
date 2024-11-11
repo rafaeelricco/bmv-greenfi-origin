@@ -19,39 +19,44 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
    const cardItems = [
       {
          icon: <ThreePlants className="size-5" />,
-         title: 'Preservação da natureza',
+         title: dictionary.transformingSustainability.cards.naturePreservation.title,
          description:
-            'Protegemos 1.757 m² de floresta, conservando espécies de flora e fauna evitando 250 toneladas de CO₂ através da manutenção de reservatórios de carbono.'
+            dictionary.transformingSustainability.cards.naturePreservation
+               .description
       },
       {
          icon: <WaterParticles className="size-5" />,
-         title: 'Recursos hídricos',
+         title: dictionary.transformingSustainability.cards.waterResources.title,
          description:
-            'Preservarmos 5.772 litros de água por ano por hectares, recuperando nascentes e melhorando a qualidade da água local.'
+            dictionary.transformingSustainability.cards.waterResources.description
       },
       {
          icon: <PlantSheets className="size-5" />,
-         title: 'Biodiversidade',
+         title: dictionary.transformingSustainability.cards.biodiversity.title,
          description:
-            'Estabelecemos corredores ecológicos, protegemos 13.229 espécies e aumentamos a população de polinizadores.'
+            dictionary.transformingSustainability.cards.biodiversity.description
       },
       {
          icon: <People className="size-5" />,
-         title: 'Impacto social',
+         title: dictionary.transformingSustainability.cards.socialImpact.title,
          description:
-            'Criamos empregos sustentáveis, beneficiamos diretamente 250 famílias e implementamos projetos de educação ambiental.'
+            dictionary.transformingSustainability.cards.socialImpact.description
       },
       {
          icon: <House className="size-5" />,
-         title: 'Desenvolvimento comunitário',
+         title: dictionary.transformingSustainability.cards.communityDevelopment
+            .title,
          description:
-            'Apoio a cooperativas locais e aumento da renda média das comunidades envolvidas.'
+            dictionary.transformingSustainability.cards.communityDevelopment
+               .description
       },
       {
          icon: <Wheat className="size-5" />,
-         title: 'Agricultura sustentável',
+         title: dictionary.transformingSustainability.cards.sustainableAgriculture
+            .title,
          description:
-            'Convertidos 878 m² para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos.'
+            dictionary.transformingSustainability.cards.sustainableAgriculture
+               .description
       }
    ]
 
@@ -69,7 +74,7 @@ export const TransformingSustainability: React.FC<DictionaryProps> = ({
             <div className="py-20">
                <div className="container">
                   <h2 className="text-3xl md:text-center md:text-5xl font-semibold text-black-black text-balance">
-                     Transformando através da sustentabilidade
+                     {dictionary.transformingSustainability.title}
                   </h2>
                </div>
                <div className="pl-4 md:pl-[8vw]">

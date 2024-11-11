@@ -136,5 +136,34 @@
          "title": "Protecting the forest's future",
          "unsupported": "Your browser doesn't support video playback."
       }
+   },
+   "transformingSustainability": {
+      "title": "Transforming through sustainability",
+      "cards": {
+         "naturePreservation": {
+            "title": "Nature Preservation",
+            "description": "We protect 1,757 m² of forest, conserving flora and fauna species, avoiding 250 tons of CO₂ through the maintenance of carbon reservoirs."
+         },
+         "waterResources": {
+            "title": "Water Resources",
+            "description": "We preserve 5,772 liters of water per year per hectare, recovering springs and improving local water quality."
+         },
+         "biodiversity": {
+            "title": "Biodiversity",
+            "description": "We establish ecological corridors, protect 13,229 species and increase pollinator populations."
+         },
+         "socialImpact": {
+            "title": "Social Impact",
+            "description": "We create sustainable jobs, directly benefit 250 families and implement environmental education projects."
+         },
+         "communityDevelopment": {
+            "title": "Community Development",
+            "description": "Support for local cooperatives and increase in the average income of involved communities."
+         },
+         "sustainableAgriculture": {
+            "title": "Sustainable Agriculture",
+            "description": "Converted 878 m² to sustainable agricultural practices, with reduced pesticide use and reintroduction of native crops."
+         }
+      }
    }
 }
