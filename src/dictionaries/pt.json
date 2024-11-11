@@ -49,11 +49,29 @@
          "sustainability": {
             "label": "Sobre a sustentabilidade",
             "tooltip": "Entre em contato com a UCS."
+         },
+         "items": {
+            "home": {
+               "label": "Início",
+               "tooltip": "Página inicial."
+            },
+            "whyBuyUcs": {
+               "label": "Por que adquirir UCS?",
+               "tooltip": "Descubra como cada UCS gera impacto real na preservação ambiental e no futuro sustentável."
+            },
+            "sustainability": {
+               "label": "Sustentabilidade",
+               "tooltip": "Conheça como transformamos sustentabilidade em proteção da Amazônia."
+            },
+            "bankOfAmazonia": {
+               "label": "Banco da Amazônia",
+               "tooltip": "Conheça nossa parceria com o Banco da Amazônia e seu compromisso com o desenvolvimento sustentável."
+            }
          }
       },
       "accessibility": {
-         "toggleMenu": "Toggle Menu",
-         "copyright": "© 2024 Ricco Ltda. All rights reserved."
+         "toggleMenu": "Alternar Menu",
+         "copyright": "© 2024 Ricco Ltda. Todos os direitos reservados."
       }
    },
    "whyBuyUcs": {

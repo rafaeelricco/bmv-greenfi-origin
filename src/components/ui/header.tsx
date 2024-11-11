@@ -31,7 +31,6 @@ import { setCookie } from 'cookies-next'
 import { PanelLeftIcon } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 
-import Image from 'next/image'
 import React from 'react'
 
 const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) => {
@@ -45,8 +44,8 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
    const items = [
       {
          id: 1,
-         label: 'Início',
-         tooltip: 'Página inicial.',
+         label: dictionary.header.navigation.items.home.label,
+         tooltip: dictionary.header.navigation.items.home.tooltip,
          disabled: false,
          scrollTo: '#hero',
          link: '/',
@@ -54,9 +53,8 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
       },
       {
          id: 2,
-         label: 'Por que adquirir UCS?',
-         tooltip:
-            'Descubra como cada UCS gera impacto real na preservação ambiental e no futuro sustentável.',
+         label: dictionary.header.navigation.items.whyBuyUcs.label,
+         tooltip: dictionary.header.navigation.items.whyBuyUcs.tooltip,
          disabled: false,
          scrollTo: '#why-buy-ucs',
          link: '/',
@@ -64,9 +62,8 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
       },
       {
          id: 3,
-         label: 'Sustentabilidade',
-         tooltip:
-            'Conheça como transformamos sustentabilidade em proteção da Amazônia.',
+         label: dictionary.header.navigation.items.sustainability.label,
+         tooltip: dictionary.header.navigation.items.sustainability.tooltip,
          disabled: false,
          scrollTo: '#sustainability',
          link: '/',
@@ -74,9 +71,8 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
       },
       {
          id: 4,
-         label: 'Banco da Amazônia',
-         tooltip:
-            'Conheça nossa parceria com o Banco da Amazônia e seu compromisso com o desenvolvimento sustentável.',
+         label: dictionary.header.navigation.items.bankOfAmazonia.label,
+         tooltip: dictionary.header.navigation.items.bankOfAmazonia.tooltip,
          disabled: false,
          scrollTo: '#bank-of-amazonia',
          link: '/',
@@ -145,14 +141,7 @@ const Header: React.FC<HeaderProps> = ({ dictionary, className }: HeaderProps) =
                      <DrawerContent className="max-w-xs bg-white-default fixed w-[40rem] h-screen overflow-y-scroll overflow-x-hidden flex flex-col top-0 right-0 z-[998] py-12 2xl:py-14 px-12 focus:outline-none space-y-8">
                         <DrawerHeader className="p-0">
                            <DrawerTitle className="p-0">
-                              <Image
-                                 src="/logo-header.png"
-                                 alt="logo-header"
-                                 width={315}
-                                 height={33}
-                                 priority
-                                 className="w-64"
-                              />
+                              <LogoBASA className="w-[197px] h-[28px]" />
                            </DrawerTitle>
                         </DrawerHeader>
                         <div className="grid gap-8">

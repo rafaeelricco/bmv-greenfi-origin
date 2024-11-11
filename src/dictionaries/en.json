@@ -38,17 +38,23 @@
    },
    "header": {
       "navigation": {
-         "home": {
-            "label": "Home",
-            "tooltip": "Home page."
-         },
-         "about": {
-            "label": "About UCS",
-            "tooltip": "Learn about UCS."
-         },
-         "sustainability": {
-            "label": "About sustainability",
-            "tooltip": "Contact UCS."
+         "items": {
+            "home": {
+               "label": "Home",
+               "tooltip": "Home page."
+            },
+            "whyBuyUcs": {
+               "label": "Why acquire UCS?",
+               "tooltip": "Discover how each UCS generates real impact on environmental preservation and sustainable future."
+            },
+            "sustainability": {
+               "label": "Sustainability",
+               "tooltip": "Learn how we transform sustainability into Amazon protection."
+            },
+            "bankOfAmazonia": {
+               "label": "Bank of Amazonia",
+               "tooltip": "Learn about our partnership with Bank of Amazonia and its commitment to sustainable development."
+            }
          }
       },
       "accessibility": {
