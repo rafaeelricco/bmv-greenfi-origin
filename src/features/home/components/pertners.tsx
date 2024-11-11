@@ -1,10 +1,6 @@
-import { DictionaryProps } from '@/src/types/dictionary'
-
 import React from 'react'
 
-export const Pertners: React.FC<DictionaryProps> = ({
-   dictionary
-}: DictionaryProps) => {
+export const Pertners: React.FC = () => {
    return (
       <React.Fragment>
          <div className="bg-green-default py-24 space-y-14 pb-28">

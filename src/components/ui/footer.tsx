@@ -1,14 +1,11 @@
+import { TwitterX } from '@/components/icons/footer'
 import { LogoBASA } from '@/components/icons/logo'
 import { DictionaryProps } from '@/src/types/dictionary'
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 
 import React from 'react'
-import { TwitterX } from '../icons/footer'
 
-export const Footer: React.FC<FooterProps> = ({
-   dictionary,
-   className
-}: FooterProps) => {
+export const Footer: React.FC<FooterProps> = ({ dictionary }: FooterProps) => {
    return (
       <React.Fragment>
          <div className="bg-white-default flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-8 md:py-0 gap-8 md:gap-0">
@@ -85,5 +82,4 @@ export const Footer: React.FC<FooterProps> = ({
 
 type FooterProps = {
    dictionary: DictionaryProps['dictionary']
-   className?: string
 }

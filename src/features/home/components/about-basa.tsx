@@ -1,9 +1,9 @@
-import { DictionaryProps } from '@/src/types/dictionary'
-import { usePathname } from 'next/navigation'
-
 import { cn } from '@/lib/utils'
 import { CheckIcon } from '@/src/components/icons/about-basa'
+import { DictionaryProps } from '@/src/types/dictionary'
 import { CirclePlay } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+
 import Image from 'next/image'
 import React from 'react'
 
@@ -64,7 +64,7 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
                   {dictionary.aboutBasa.video.title}
                </h3>
                <div className="max-w-xl min-h-72 rounded-2xl mx-auto my-0">
-                  <VideoPlayer dictionary={{ dictionary }} />
+                  <VideoPlayer />
                </div>
             </div>
          </div>
@@ -72,10 +72,7 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
    )
 }
 
-const VideoPlayer: React.FC<{ dictionary: DictionaryProps; thumbnail?: string }> = ({
-   dictionary,
-   thumbnail
-}) => {
+const VideoPlayer: React.FC<{ thumbnail?: string }> = ({ thumbnail }) => {
    const videoRef = React.useRef<HTMLVideoElement>(null)
    const pathname = usePathname()
    const [isFullscreen, setIsFullscreen] = React.useState(false)

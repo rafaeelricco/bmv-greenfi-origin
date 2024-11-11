@@ -83,6 +83,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
             form.setValue('wallet', address)
          }
       } catch (error) {
+         console.log(error)
          toast.error(i18next.t('messages.error.wallet'))
       } finally {
          setIsLoading({ ...isLoading, connectWallet: false })
@@ -102,11 +103,10 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                   <div className="space-y-2">
                      <div className="space-y-1">
                         <h1 className="text-xl font-raleway text-green-default font-semibold">
-                           Sua UCS exclusiva está ativada!
+                           {dictionary.hero.dialog.title}
                         </h1>
                         <p className="text-sm text-gray-paragraph">
-                           Parabéns! Como participante do COP19, você recebeu uma
-                           Unidade de Crédito de Sustentabilidade (UCS).
+                           {dictionary.hero.dialog.description}
                         </p>
                      </div>
                   </div>
@@ -119,7 +119,11 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                         render={({ field }) => (
                            <FormItem>
                               <FormControl>
-                                 <Input type="text" placeholder="Nome" {...field} />
+                                 <Input
+                                    type="text"
+                                    placeholder={dictionary.hero.dialog.form.name}
+                                    {...field}
+                                 />
                               </FormControl>
                               <FormMessage />
                            </FormItem>
@@ -133,7 +137,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                               <FormControl>
                                  <Input
                                     type="email"
-                                    placeholder="E-mail"
+                                    placeholder={dictionary.hero.dialog.form.email}
                                     {...field}
                                  />
                               </FormControl>
@@ -149,7 +153,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                               <FormControl>
                                  <Input
                                     type="text"
-                                    placeholder="Código da moeda"
+                                    placeholder={dictionary.hero.dialog.form.code}
                                     {...field}
                                  />
                               </FormControl>
@@ -165,7 +169,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                               <FormControl>
                                  <Input
                                     type="text"
-                                    placeholder="Endereço da wallet"
+                                    placeholder={dictionary.hero.dialog.form.wallet}
                                     {...field}
                                  />
                               </FormControl>
@@ -180,7 +184,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            className="w-full"
                            loading={isLoading.redeem}
                         >
-                           Resgatar minha UCS
+                           {dictionary.hero.dialog.form.buttons.redeem}
                         </Button>
                         <Button
                            type="button"
@@ -191,7 +195,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                         >
                            <div className="flex items-center gap-2">
                               <Wallet className="w-4 h-4" />
-                              Conectar wallet
+                              {dictionary.hero.dialog.form.buttons.connect}
                            </div>
                         </Button>
                      </div>

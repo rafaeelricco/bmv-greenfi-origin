@@ -18,6 +18,20 @@
       },
       "partners": {
          "title": "Global partners who trust us"
+      },
+      "dialog": {
+         "title": "Your exclusive UCS is activated!",
+         "description": "Congratulations! As a COP19 participant, you received a Sustainability Credit Unit (UCS).",
+         "form": {
+            "name": "Name",
+            "email": "Email",
+            "code": "Currency code",
+            "wallet": "Wallet address",
+            "buttons": {
+               "redeem": "Redeem my UCS",
+               "connect": "Connect wallet"
+            }
+         }
       }
    },
    "statistics": {
