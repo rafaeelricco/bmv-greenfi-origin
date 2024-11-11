@@ -68,11 +68,11 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       setIsLoading({ ...isLoading, redeem: false })
 
       if (response.status !== 200) {
-         toast.error(i18next.t('messages.error.redeem'))
+         toast.error(dictionary.messages.error.redeem)
          return
       }
 
-      toast.success(i18next.t('messages.success.redeem'), { duration: 10000 })
+      toast.success(dictionary.messages.success.redeem, { duration: 10000 })
       form.reset()
    }
 
@@ -85,7 +85,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
          }
       } catch (error) {
          console.log(error)
-         toast.error(i18next.t('messages.error.wallet'))
+         toast.error(dictionary.messages.error.wallet)
       } finally {
          setIsLoading({ ...isLoading, connectWallet: false })
       }
