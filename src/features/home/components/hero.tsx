@@ -105,8 +105,8 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            Sua UCS exclusiva está ativada!
                         </h1>
                         <p className="text-sm text-gray-paragraph">
-                           Parabéns! Como participante do [Nome do Evento], você
-                           recebeu uma Unidade de Crédito de Sustentabilidade (UCS).
+                           Parabéns! Como participante do COP19, você recebeu uma
+                           Unidade de Crédito de Sustentabilidade (UCS).
                         </p>
                      </div>
                   </div>

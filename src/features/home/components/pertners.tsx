@@ -9,8 +9,7 @@ export const Pertners: React.FC<DictionaryProps> = ({
       <React.Fragment>
          <div className="bg-green-default py-24 space-y-14 pb-28">
             <h3 className="text-lg font-semibold text-white-default text-center">
-               Orgulhosamente parte do [Nome do Evento de Sustentabilidade
-               Internacional]
+               Orgulhosamente parte do COP19
             </h3>
             <div className="container">
                <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">

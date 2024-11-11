@@ -1,8 +1,9 @@
 import { LogoBASA } from '@/components/icons/logo'
 import { DictionaryProps } from '@/src/types/dictionary'
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 
 import React from 'react'
+import { TwitterX } from '../icons/footer'
 
 export const Footer: React.FC<FooterProps> = ({
    dictionary,
@@ -13,8 +14,7 @@ export const Footer: React.FC<FooterProps> = ({
          <div className="bg-white-default flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-8 md:py-0 gap-8 md:gap-0">
             <LogoBASA className="w-[197px] h-[28px] filter grayscale" />
             <p className="text-base text-gray-default text-center md:text-left px-4 md:px-0">
-               Greenfi - Cultivando um futuro sustentável, juntos - © 2024 Todos os
-               direitos reservados
+               {dictionary.footer.copyright}
             </p>
             <div className="flex flex-wrap items-center gap-4">
                <a
@@ -22,6 +22,7 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.youtube}
                >
                   <Youtube className="text-white-default size-5" />
                </a>
@@ -30,6 +31,7 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.instagram}
                >
                   <Instagram className="text-white-default size-5" />
                </a>
@@ -38,14 +40,16 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.twitter}
                >
-                  <Twitter className="text-white-default size-5" />
+                  <TwitterX className="size-5 text-white-default" />
                </a>
                <a
                   href="https://www.linkedin.com/company/banco-da-amaz%C3%B4nia?originalSubdomain=br"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.linkedin}
                >
                   <Linkedin className="text-white-default size-5" />
                </a>
@@ -54,6 +58,7 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.facebook}
                >
                   <Facebook className="text-white-default size-5" />
                </a>
@@ -62,6 +67,7 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-default p-2 rounded-md cursor-pointer"
+                  aria-label={dictionary.footer.socialLinks.spotify}
                >
                   <svg
                      xmlns="http://www.w3.org/2000/svg"

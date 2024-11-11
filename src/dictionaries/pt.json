@@ -177,5 +177,16 @@
             "description": "Convertidos 878 m² para práticas agrícolas sustentáveis, com redução no uso de pesticidas e reintrodução de cultivos nativos."
          }
       }
+   },
+   "footer": {
+      "copyright": "Cultivando um futuro sustentável, juntos - © 2024 Todos os direitos reservados",
+      "socialLinks": {
+         "youtube": "Canal do Youtube",
+         "instagram": "Perfil do Instagram",
+         "twitter": "Perfil do Twitter",
+         "linkedin": "Perfil do LinkedIn",
+         "facebook": "Página do Facebook",
+         "spotify": "Canal do Spotify"
+      }
    }
 }
