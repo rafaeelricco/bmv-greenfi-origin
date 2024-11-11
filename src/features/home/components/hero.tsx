@@ -72,7 +72,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
          return
       }
 
-      toast.success(i18next.t('messages.success.redeem'))
+      toast.success(i18next.t('messages.success.redeem'), { duration: 10000 })
       form.reset()
    }
 
