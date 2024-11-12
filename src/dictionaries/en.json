@@ -21,7 +21,7 @@
       },
       "dialog": {
          "title": "Your exclusive UCS is activated!",
-         "description": "Congratulations! As a COP19 participant, you received a Sustainability Credit Unit (UCS).",
+         "description": "Congratulations! As a COP29 participant, you received a Sustainability Credit Unit (UCS).",
          "form": {
             "name": "Name",
             "email": "Email",
@@ -30,7 +30,9 @@
             "buttons": {
                "redeem": "Redeem my UCS",
                "connect": "Connect wallet"
-            }
+            },
+            "or": "Or",
+            "generateWallet": "Generate a wallet"
          }
       }
    },

@@ -21,7 +21,7 @@
       },
       "dialog": {
          "title": "Sua UCS exclusiva está ativada!",
-         "description": "Parabéns! Como participante do COP19, você recebeu uma Unidade de Crédito de Sustentabilidade (UCS).",
+         "description": "Parabéns! Como participante do COP29, você recebeu uma Unidade de Crédito de Sustentabilidade (UCS).",
          "form": {
             "name": "Nome",
             "email": "E-mail",
@@ -30,7 +30,9 @@
             "buttons": {
                "redeem": "Resgatar minha UCS",
                "connect": "Conectar wallet"
-            }
+            },
+            "or": "Ou",
+            "generateWallet": "Gere uma carteira"
          }
       }
    },
