@@ -8,9 +8,9 @@ import React from 'react'
 export const Footer: React.FC<FooterProps> = ({ dictionary }: FooterProps) => {
    return (
       <React.Fragment>
-         <div className="bg-white-default flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-8 md:py-0 gap-8 md:gap-0">
-            <LogoBASA className="w-[197px] h-[28px] filter grayscale" />
-            <p className="text-base text-gray-default text-center md:text-left px-4 md:px-0">
+         <div className="bg-[#6E7378] flex flex-col md:flex-row items-center justify-between min-h-32 px-4 md:px-20 py-8 md:py-0 gap-8 md:gap-0">
+            <LogoBASA className="w-[197px] h-[28px] filter brightness-0 invert" />
+            <p className="text-base text-white-default text-center md:text-left px-4 md:px-0">
                {dictionary.footer.copyright}
             </p>
             <div className="flex flex-wrap items-center gap-4">

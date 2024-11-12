@@ -18,10 +18,10 @@ export const HomePageComponent: React.FC<DictionaryProps> = ({
       <React.Suspense>
          <Header dictionary={dictionary} />
          <Hero dictionary={dictionary} />
-         <WhatGuidesUs dictionary={dictionary} />
          <AboutBASA dictionary={dictionary} />
-         <TransformingSustainability dictionary={dictionary} />
+         <WhatGuidesUs dictionary={dictionary} />
          <WhyBuyUcs dictionary={dictionary} />
+         <TransformingSustainability dictionary={dictionary} />
          <Footer dictionary={dictionary} />
       </React.Suspense>
    )

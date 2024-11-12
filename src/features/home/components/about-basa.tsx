@@ -13,6 +13,14 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
    return (
       <React.Fragment>
          <div className="bg-green-default p-4 md:p-6" id="bank-of-amazonia">
+            <div className="py-16 space-y-8">
+               <h3 className="text-lg font-semibold text-white-default text-center">
+                  {dictionary.aboutBasa.video.title}
+               </h3>
+               <div className="max-w-xl min-h-72 rounded-2xl mx-auto my-0">
+                  <VideoPlayer />
+               </div>
+            </div>
             <div className="container bg-[#FBEFD5] rounded-3xl px-6 md:px-20 py-8 md:py-16 grid gap-6 md:gap-8">
                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-20">
                   <div className="grid gap-6 md:gap-8 content-center">
@@ -57,14 +65,6 @@ export const AboutBASA: React.FC<DictionaryProps> = ({
                         quality={50}
                      />
                   </div>
-               </div>
-            </div>
-            <div className="py-16 space-y-8">
-               <h3 className="text-lg font-semibold text-white-default text-center">
-                  {dictionary.aboutBasa.video.title}
-               </h3>
-               <div className="max-w-xl min-h-72 rounded-2xl mx-auto my-0">
-                  <VideoPlayer />
                </div>
             </div>
          </div>

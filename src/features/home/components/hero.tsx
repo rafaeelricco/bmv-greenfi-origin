@@ -228,7 +228,8 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight">
                               {dictionary.hero.title.first}
                               <br className="hidden md:block" />{' '}
-                              {dictionary.hero.title.second}&nbsp;
+                              {dictionary.hero.title.second}
+                              <br className="hidden md:block" />{' '}
                               <span className="from-gradient-start to-gradient-end bg-gradient-to-tl bg-clip-text text-transparent">
                                  {dictionary.hero.title.highlight}
                               </span>

@@ -29,7 +29,7 @@ import { cn } from '@/lib/utils'
 import { DictionaryProps } from '@/src/types/dictionary'
 import { setCookie } from 'cookies-next'
 import { PanelLeftIcon } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 import React from 'react'
 
@@ -196,7 +196,6 @@ const SelectLanguage: React.FC<{ className?: string }> = ({
 }: {
    className?: string
 }) => {
-   const router = useRouter()
    const pathName = usePathname()
 
    const curr_locale = i18n.locales.find((locale) => {
