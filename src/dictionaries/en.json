@@ -30,7 +30,9 @@
             "buttons": {
                "redeem": "Redeem my UCS",
                "connect": "Connect wallet"
-            }
+            },
+            "or": "Or",
+            "generateWallet": "Generate a wallet"
          }
       }
    },

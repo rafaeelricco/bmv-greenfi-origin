@@ -221,8 +221,10 @@ const SelectLanguage: React.FC<{ className?: string }> = ({
                }) as string
             }
             onValueChange={(value: string) => {
-               router.push(redirectedPathName(value))
-               setCookie('locale', value)
+               if (typeof window !== 'undefined') {
+                  window.location.href = redirectedPathName(value)
+                  setCookie('locale', value)
+               }
             }}
          >
             <SelectTrigger

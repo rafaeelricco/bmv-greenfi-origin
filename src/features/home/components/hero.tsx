@@ -56,14 +56,15 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    }
 
    async function onSubmit(data: z.infer<typeof redeemUcsSchema>) {
-      setIsLoading({ ...isLoading, redeem: true })
-
       const response = await redeemUcsService({
          ownerEmail: data.email,
          ownerName: data.name,
          tokenCode: data.code,
          toWalletAddress: data.wallet
       })
+      setIsLoading({ ...isLoading, redeem: true })
+
+      await new Promise((resolve) => setTimeout(resolve, 3000))
 
       setIsLoading({ ...isLoading, redeem: false })
 
@@ -77,10 +78,12 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    }
 
    const handleConnectWallet = async () => {
-      setIsLoading({ ...isLoading, connectWallet: true })
       try {
          const address = await getGoogleWallet()
+
          if (address) {
+            setIsLoading({ ...isLoading, connectWallet: true })
+            await new Promise((resolve) => setTimeout(resolve, 3000))
             form.setValue('wallet', address)
          }
       } catch (error) {
@@ -166,19 +169,41 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                         control={form.control}
                         name="wallet"
                         render={({ field }) => (
-                           <FormItem>
-                              <FormControl>
-                                 <Input
-                                    type="text"
-                                    placeholder={dictionary.hero.dialog.form.wallet}
-                                    {...field}
-                                 />
-                              </FormControl>
-                              <FormMessage />
+                           <FormItem className="grid grid-cols-[1fr_auto_1fr] space-y-0 items-center gap-4">
+                              <div>
+                                 <FormControl>
+                                    <Input
+                                       type="text"
+                                       placeholder={
+                                          dictionary.hero.dialog.form.wallet
+                                       }
+                                       {...field}
+                                    />
+                                 </FormControl>
+                                 <FormMessage />
+                              </div>
+                              <p className="text-sm text-gray-paragraph">
+                                 {dictionary.hero.dialog.form.or}
+                              </p>
+                              <div>
+                                 <Button
+                                    type="button"
+                                    variant={'outline'}
+                                    className="w-full h-10 mt-0"
+                                    size={'sm'}
+                                    onClick={async () => await handleConnectWallet()}
+                                    loading={isLoading.connectWallet}
+                                 >
+                                    <div className="flex items-center gap-2">
+                                       <Wallet className="w-4 h-4" />
+                                       {dictionary.hero.dialog.form.generateWallet}
+                                    </div>
+                                 </Button>
+                              </div>
                            </FormItem>
                         )}
                      />
-                     <div className="grid md:grid-cols-2 gap-4">
+                     <div className="grid">
                         <Button
                            type="submit"
                            variant={'default'}
@@ -186,18 +211,6 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            loading={isLoading.redeem}
                         >
                            {dictionary.hero.dialog.form.buttons.redeem}
-                        </Button>
-                        <Button
-                           type="button"
-                           variant={'outline'}
-                           className="w-full"
-                           onClick={async () => await handleConnectWallet()}
-                           loading={isLoading.connectWallet}
-                        >
-                           <div className="flex items-center gap-2">
-                              <Wallet className="w-4 h-4" />
-                              {dictionary.hero.dialog.form.buttons.connect}
-                           </div>
                         </Button>
                      </div>
                   </form>
@@ -282,7 +295,7 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    )
 }
 
-export const redeemUcsSchema = z.object({
+const redeemUcsSchema = z.object({
    name: z.string().min(3, {
       message: i18next.t('validations:username')
    }),
@@ -300,5 +313,3 @@ export const redeemUcsSchema = z.object({
       message: i18next.t('validations:wallet')
    })
 })
-
-export type RedeemUcsProps = z.infer<typeof redeemUcsSchema>
