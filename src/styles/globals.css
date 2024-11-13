@@ -7,6 +7,7 @@
       --radius: 0.5rem;
       --font-primary: 'Raleway', sans-serif;
       --font-secondary: 'Montserrat', sans-serif;
+      color-scheme: light only;
    }
 }
 
