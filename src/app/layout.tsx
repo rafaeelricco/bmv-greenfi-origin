@@ -67,7 +67,7 @@ export default async function Root({ children, params }: RootLayoutProps) {
    const { lang } = await params
 
    return (
-      <html lang={lang} className="antialiased" style={{ colorScheme: 'light' }}>
+      <html lang={lang} className="antialiased">
          <head>
             {/* eslint-disable-next-line @next/next/no-page-custom-font */}
             <link
