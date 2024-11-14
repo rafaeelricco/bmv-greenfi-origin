@@ -94,127 +94,164 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
       }
    }
 
+   const [dialog, setDialog] = React.useState({
+      redeem: false,
+      learnMore: false
+   })
+
+   const handleCloseDialog = async () => {
+      setDialog({ ...dialog, redeem: false, learnMore: false })
+      form.reset()
+      await handleLogout()
+   }
+
    return (
       <React.Fragment>
          <Dialog
-            onOpenChange={async () => {
-               form.reset()
-               await handleLogout()
-            }}
+            open={dialog.redeem || dialog.learnMore}
+            onOpenChange={() => handleCloseDialog()}
          >
             <DialogContent className="space-y-2">
-               <DialogTitle>
-                  <div className="space-y-2">
-                     <div className="space-y-1">
-                        <h1 className="text-xl font-raleway text-green-default font-semibold">
-                           {dictionary.hero.dialog.title}
-                        </h1>
-                        <p className="text-sm text-gray-paragraph">
-                           {dictionary.hero.dialog.description}
-                        </p>
-                     </div>
-                  </div>
-               </DialogTitle>
-               <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                     <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                           <FormItem>
-                              <FormControl>
-                                 <Input
-                                    type="text"
-                                    placeholder={dictionary.hero.dialog.form.name}
-                                    {...field}
-                                 />
-                              </FormControl>
-                              <FormMessage />
-                           </FormItem>
-                        )}
-                     />
-                     <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                           <FormItem>
-                              <FormControl>
-                                 <Input
-                                    type="email"
-                                    placeholder={dictionary.hero.dialog.form.email}
-                                    {...field}
-                                 />
-                              </FormControl>
-                              <FormMessage />
-                           </FormItem>
-                        )}
-                     />
-                     <FormField
-                        control={form.control}
-                        name="code"
-                        render={({ field }) => (
-                           <FormItem>
-                              <FormControl>
-                                 <Input
-                                    type="text"
-                                    placeholder={dictionary.hero.dialog.form.code}
-                                    {...field}
-                                 />
-                              </FormControl>
-                              <FormMessage />
-                           </FormItem>
-                        )}
-                     />
-                     <FormField
-                        control={form.control}
-                        name="wallet"
-                        render={({ field }) => (
-                           <FormItem className="grid grid-cols-[1fr_auto_1fr] space-y-0 items-center gap-4">
-                              <div>
-                                 <FormControl>
-                                    <Input
-                                       type="text"
-                                       placeholder={
-                                          dictionary.hero.dialog.form.wallet
-                                       }
-                                       {...field}
-                                    />
-                                 </FormControl>
-                                 <FormMessage />
-                              </div>
+               {dialog.redeem && (
+                  <React.Fragment>
+                     <DialogTitle>
+                        <div className="space-y-2">
+                           <div className="space-y-1">
+                              <h1 className="text-xl font-raleway text-green-default font-semibold">
+                                 {dictionary.hero.dialog.title}
+                              </h1>
                               <p className="text-sm text-gray-paragraph">
-                                 {dictionary.hero.dialog.form.or}
+                                 {dictionary.hero.dialog.description}
                               </p>
-                              <div>
-                                 <Button
-                                    type="button"
-                                    variant={'outline'}
-                                    className="w-full h-10 mt-0"
-                                    size={'sm'}
-                                    onClick={async () => await handleConnectWallet()}
-                                    loading={isLoading.connectWallet}
-                                 >
-                                    <div className="flex items-center gap-2">
-                                       <Wallet className="w-4 h-4" />
-                                       {dictionary.hero.dialog.form.generateWallet}
-                                    </div>
-                                 </Button>
-                              </div>
-                           </FormItem>
-                        )}
-                     />
-                     <div className="grid">
-                        <Button
-                           type="submit"
-                           variant={'default'}
-                           className="w-full"
-                           loading={isLoading.redeem}
+                           </div>
+                        </div>
+                     </DialogTitle>
+                     <Form {...form}>
+                        <form
+                           onSubmit={form.handleSubmit(onSubmit)}
+                           className="space-y-4"
                         >
-                           {dictionary.hero.dialog.form.buttons.redeem}
-                        </Button>
-                     </div>
-                  </form>
-               </Form>
+                           <FormField
+                              control={form.control}
+                              name="name"
+                              render={({ field }) => (
+                                 <FormItem>
+                                    <FormControl>
+                                       <Input
+                                          type="text"
+                                          placeholder={
+                                             dictionary.hero.dialog.form.name
+                                          }
+                                          {...field}
+                                       />
+                                    </FormControl>
+                                    <FormMessage />
+                                 </FormItem>
+                              )}
+                           />
+                           <FormField
+                              control={form.control}
+                              name="email"
+                              render={({ field }) => (
+                                 <FormItem>
+                                    <FormControl>
+                                       <Input
+                                          type="email"
+                                          placeholder={
+                                             dictionary.hero.dialog.form.email
+                                          }
+                                          {...field}
+                                       />
+                                    </FormControl>
+                                    <FormMessage />
+                                 </FormItem>
+                              )}
+                           />
+                           <FormField
+                              control={form.control}
+                              name="code"
+                              render={({ field }) => (
+                                 <FormItem>
+                                    <FormControl>
+                                       <Input
+                                          type="text"
+                                          placeholder={
+                                             dictionary.hero.dialog.form.code
+                                          }
+                                          {...field}
+                                       />
+                                    </FormControl>
+                                    <FormMessage />
+                                 </FormItem>
+                              )}
+                           />
+                           <FormField
+                              control={form.control}
+                              name="wallet"
+                              render={({ field }) => (
+                                 <FormItem className="grid grid-cols-[1fr_auto_1fr] space-y-0 items-center gap-4">
+                                    <div>
+                                       <FormControl>
+                                          <Input
+                                             type="text"
+                                             placeholder={
+                                                dictionary.hero.dialog.form.wallet
+                                             }
+                                             {...field}
+                                          />
+                                       </FormControl>
+                                       <FormMessage />
+                                    </div>
+                                    <p className="text-sm text-gray-paragraph">
+                                       {dictionary.hero.dialog.form.or}
+                                    </p>
+                                    <div>
+                                       <Button
+                                          type="button"
+                                          variant={'outline'}
+                                          className="w-full h-10 mt-0"
+                                          size={'sm'}
+                                          onClick={async () =>
+                                             await handleConnectWallet()
+                                          }
+                                          loading={isLoading.connectWallet}
+                                       >
+                                          <div className="flex items-center gap-2">
+                                             <Wallet className="w-4 h-4" />
+                                             {
+                                                dictionary.hero.dialog.form
+                                                   .generateWallet
+                                             }
+                                          </div>
+                                       </Button>
+                                    </div>
+                                 </FormItem>
+                              )}
+                           />
+                           <div className="grid">
+                              <Button
+                                 type="submit"
+                                 variant={'default'}
+                                 className="w-full"
+                                 loading={isLoading.redeem}
+                              >
+                                 {dictionary.hero.dialog.form.buttons.redeem}
+                              </Button>
+                           </div>
+                        </form>
+                     </Form>
+                  </React.Fragment>
+               )}
+               {dialog.learnMore && (
+                  <React.Fragment>
+                     <DialogTitle>
+                        {dictionary.hero.dialog.learnMore.title}
+                     </DialogTitle>
+                     <p className="text-sm sm:text-base lg:text-lg font-medium text-gray-paragraph">
+                        {dictionary.hero.dialog.learnMore.description}
+                     </p>
+                  </React.Fragment>
+               )}
             </DialogContent>
             <Background className="absolute left-1/2 -translate-x-1/2 h-[calc(100vh-82px)] opacity-80 w-screen -z-10" />
             <div
@@ -239,22 +276,31 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                            </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-6">
-                           <DialogTrigger
-                              onClick={async () => {
-                                 if (localStorage.getItem('openlogin_store')) {
-                                    await handleLogout()
-                                 }
-                              }}
-                              asChild
+                           <div
+                              onClick={() => setDialog({ ...dialog, redeem: true })}
                            >
-                              <Button variant="default" className="w-full sm:w-auto">
-                                 {dictionary.hero.buttons.primary}
-                              </Button>
-                           </DialogTrigger>
+                              <DialogTrigger
+                                 onClick={async () => {
+                                    if (localStorage.getItem('openlogin_store')) {
+                                       await handleLogout()
+                                    }
+                                 }}
+                                 asChild
+                              >
+                                 <Button
+                                    variant="default"
+                                    className="w-full sm:w-auto"
+                                 >
+                                    {dictionary.hero.buttons.primary}
+                                 </Button>
+                              </DialogTrigger>
+                           </div>
                            <Button
                               variant="outline"
                               className="w-full sm:w-auto"
-                              onClick={() => handleScrollTo('#what-guides-us')}
+                              onClick={() =>
+                                 setDialog({ ...dialog, learnMore: true })
+                              }
                            >
                               {dictionary.hero.buttons.secondary}
                            </Button>
