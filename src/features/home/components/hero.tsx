@@ -194,6 +194,9 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
                                        <FormControl>
                                           <Input
                                              type="text"
+                                             autoComplete="new-password"
+                                             autoCorrect="off"
+                                             autoSave="off"
                                              placeholder={
                                                 dictionary.hero.dialog.form.wallet
                                              }
