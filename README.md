@@ -1,7 +1,4 @@
-> 🌎 Opções de Idioma:
->
-> -  [Português Brasileiro](#) (atual)
-> -  [English](./docs/en/README.md)
+<img src="https://res.cloudinary.com/dnqiosdb6/image/upload/v1731952147/bmv-basa-cover_ldqu5o.png" alt="cover">
 
 ## Tabela de Conteúdos
 
@@ -12,6 +9,11 @@
    -  [Informações Educativas](#informações-educativas)
 -  [Contexto da COP29](#contexto-da-cop29)
 -  [Fluxo de Transferência UCS](#fluxo-de-transferência-ucs)
+
+## Opções de Idioma
+
+> -  [Português Brasileiro](#) (atual)
+> -  [English](./docs/en/README.md)
 
 ## Visão Geral
 
