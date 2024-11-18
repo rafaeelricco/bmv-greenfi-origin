@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
          <Comp
             className={cn(
                buttonVariants({ variant, size, className }),
-               loading && 'cursor-wait'
+               loading && 'cursor-wait pointer-events-none'
             )}
             disabled={loading || props.disabled}
             ref={ref}

@@ -56,13 +56,14 @@ export const Hero: React.FC<DictionaryProps> = ({ dictionary }: DictionaryProps)
    }
 
    async function onSubmit(data: z.infer<typeof redeemUcsSchema>) {
+      setIsLoading({ ...isLoading, redeem: true })
+
       const response = await redeemUcsService({
          ownerEmail: data.email,
          ownerName: data.name,
          tokenCode: data.code,
          toWalletAddress: data.wallet
       })
-      setIsLoading({ ...isLoading, redeem: true })
 
       await new Promise((resolve) => setTimeout(resolve, 3000))
 
