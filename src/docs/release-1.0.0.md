@@ -51,10 +51,12 @@ Finalmente, abra seu navegador e acesse [http://localhost:3000](http://localhost
 
 -  **Landing Page**: [bancoamazonia.bmv.global/pt/home](https://bancoamazonia.bmv.global/pt/home)
 -  **API**: [apifx.bmv.global](https://apifx.bmv.global)
+-  **Documentação API Swagger**: [bmv-greenfi-origin-api-develop.up.railway.app/api/doc](https://apifx.bmv.global/api/doc)
 
 ### Desenvolvimento
 
 -  **API**: [bmv-greenfi-origin-api-develop.up.railway.app](https://bmv-greenfi-origin-api-develop.up.railway.app)
+-  **Documentação API Swagger**: [bmv-greenfi-origin-api-develop.up.railway.app/api/doc](https://bmv-greenfi-origin-api-develop.up.railway.app/api/doc)
 
 ## Contribuidores
 
