@@ -7,7 +7,7 @@ Esta versão inicial traz diversas funcionalidades focadas na experiência do us
 -  **Resgate de UCS**: Interface intuitiva permite o resgate eficiente de UCS através do QR Code presente na Moeda da Sustentabilidade. Inclui um formulário de registro para capturar informações do usuário e validar o endereço da carteira.
 -  **Geração e Validação de Carteira**: Integração com Web3Auth para criação de carteiras digitais através de autenticação Google, além de suporte para inserção manual de endereços de carteira existentes.
 -  **Processamento e Transferência de UCS**: Sistema de validação de dados e requisição API para garantir a transferência segura de UCS, com mensagens de erro e sucesso para feedback do usuário.
--  **Suporte Multilíngue**: Sistema completo de internacionalização com suporte para Português (PT-BR) e Inglês(EN-US).
+-  **Suporte Multilíngue**: S istema completo de internacionalização com suporte para Português (PT-BR) e Inglês(EN-US).
 -  **Conteúdo Educativo**: Seções informativas sobre sustentabilidade e o impacto das UCS na preservação da Amazônia.
 
 ## Executando o projeto
