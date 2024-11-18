@@ -27,7 +27,7 @@ A landing page tem como principal objetivo promover a **sustentabilidade** e inc
 
 ### Resgate e Aquisição de UCS
 
--  A página permite que os participantes da COP29 escaneiem a "Moeda" recebida no evento, que possui um QR Code. Este código redireciona para a página e contém um número de série exclusivo para resgatar sua UCS.
+-  A página permite que os usuários efetuem o resgate através do número de série exclusivo para resgatar sua UCS.
 
 -  Incentiva a aquisição de unidades adicionais, destacando o impacto tangível de cada UCS na preservação ambiental.
 
