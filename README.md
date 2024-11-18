@@ -10,11 +10,6 @@
 -  [Contexto da COP29](#contexto-da-cop29)
 -  [Fluxo de Transferência UCS](#fluxo-de-transferência-ucs)
 
-## Opções de Idioma
-
-> -  [Português Brasileiro](#) (atual)
-> -  [English](./docs/en/README.md)
-
 ## Visão Geral
 
 O projeto apresentado é uma **landing page** desenvolvida a pedido da **BMV**, disponível em [bmv.global](https://www.bmv.global/), para o **Banco da Amazônia**, cujo site é [bancoamazonia.com.br](https://www.bancoamazonia.com.br/). Esta página foi criada especialmente para o evento **COP29**, a 29ª Conferência das Partes da Convenção-Quadro das Nações Unidas sobre Mudança Climática, realizada em Baku, Azerbaijão.
